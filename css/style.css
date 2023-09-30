@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Young+Serif&display=swap');
 
 :root {
   --primary-black: #040d12;
   --primary-green: #183d3d;
   --secondary-green: #5c8374;
   --less-green: #93b1a6;
+  --primary-font: 'Gabarito', sans-serif;
+  --secondary-font: 'Young Serif', serif;
+  --tertiary-font: 'Pixelify Sans', cursive;
 }
 
 html {
@@ -12,7 +16,7 @@ html {
 }
 
 body {
-  font-family: "Gabarito", sans-serif;
+  font-family: 'Gabarito', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -34,6 +38,7 @@ ul {
 .navigation-container {
   width: 100%;
   height: 8.5rem;
+  padding-top: 1rem;
   background-color: var(--primary-black);
   display: flex;
   justify-content: space-between;
@@ -51,8 +56,35 @@ ul {
 }
 
 /* content section */
+#content {
+  width: 100%;
+  height: calc(100vh - 8.5rem - 4rem);
+}
 .content-container {
   width: 100%;
-  height: calc(100vh - 8.5rem);
+  height: 100%;
   background-color: var(--primary-black);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.content-title {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  margin-right: calc(6rem + 3rem);
+  color: var(--less-green);
+  font-size: 4rem;
+}
+#change-designs {
+  font-family: var(--secondary-font);
+}
+#change-words {
+  font-family: var(--tertiary-font);
+}
+
+/* projects container */
+#projects {
+  width: 100%;
+  height: 100vh;
 }
