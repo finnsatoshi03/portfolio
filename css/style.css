@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;800;900&family=Pixelify+Sans&family=Young+Serif&display=swap");
 
 :root {
   --primary-black: #040d12;
   --primary-green: #183d3d;
   --secondary-green: #5c8374;
   --less-green: #93b1a6;
+  --primary-font: "Gabarito", sans-serif;
+  --secondary-font: "Young Serif", serif;
+  --tertiary-font: "Pixelify Sans", cursive;
 }
 
 html {
@@ -34,6 +37,7 @@ ul {
 .navigation-container {
   width: 100%;
   height: 8.5rem;
+  padding-top: 1rem;
   background-color: var(--primary-black);
   display: flex;
   justify-content: space-between;
@@ -49,10 +53,64 @@ ul {
   font-weight: 600;
   color: var(--less-green);
 }
+.glitch-on-hover {
+  width: 50px;
+  display: inline-block;
+  overflow: hidden;
+}
 
 /* content section */
+#content {
+  width: 100%;
+  height: calc(100vh - 8.5rem - 3rem);
+}
 .content-container {
   width: 100%;
-  height: calc(100vh - 8.5rem);
+  height: 100%;
   background-color: var(--primary-black);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+.content-title {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  margin-right: calc(6rem + 3rem);
+  color: var(--less-green);
+  font-size: 4rem;
+}
+.opening-title {
+  font-size: 5rem;
+}
+#change-designs {
+  font-family: var(--secondary-font);
+}
+#change-words {
+  font-family: var(--tertiary-font);
+}
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* projects container */
+#projects {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-green);
+}
+/* .projects-container {
+} */
