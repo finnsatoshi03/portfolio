@@ -4,7 +4,8 @@ function Profile() {
       <img
         src="/profile.jpg"
         alt="My Profile"
-        className="h-full w-full rounded-[2.5rem] object-cover"
+        className="w-full rounded-[2.5rem] object-cover"
+        style={{ height: "calc(100vh - 3rem)" }}
       />
     </>
   );
