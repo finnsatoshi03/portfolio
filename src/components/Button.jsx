@@ -9,6 +9,7 @@ function Button({ children, onClick, disabled, type, to }) {
     primary: base + "px-3 py-1 md:px-4 md:py-1",
     secondary:
       "inline-block rounded-full transition-colors duration-300 bg-black hover:bg-black hover:bg-opacity-20 px-3 py-1 md:px-4 md:py-1",
+    rounded: base + "p-0.5 md:p-1",
     small: base + " px-2 py-0.5 md:px-3 md:py-0.5 text-xs",
   };
 

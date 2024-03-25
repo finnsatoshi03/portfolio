@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ["Noto Sans", "sans-serif"],
       },
+      colors: {
+        black: "#252525",
+      },
     },
   },
   plugins: [],

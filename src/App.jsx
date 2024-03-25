@@ -12,16 +12,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<Navigate replace to={"home"} />} />
-          <Route element={<Home />} path="home" />
-          <Route element={<Projects />} path="projects" />
-          <Route element={<Archives />} path="archives" />
-          <Route element={<About />} path="about" />
-          <Route element={<Contact />} path="contact" />
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<Navigate replace to="home" />} />
+          <Route path="home" element={<Home />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="archives" element={<Archives />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
 
-        <Route element={<PageNotFound />} path="*" />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
