@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         black: "#252525",
+        brown: "#b2a47f",
       },
     },
   },

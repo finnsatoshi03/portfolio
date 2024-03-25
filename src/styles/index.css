@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply transition-all duration-300 ease-in-out;
+}
+
 a.active {
   @apply inline-block list-disc rounded-full border border-black px-3 py-1 transition-colors duration-300 md:px-4 md:py-1;
 }
