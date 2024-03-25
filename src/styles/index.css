@@ -11,7 +11,7 @@ a.active::before {
 a.nav-links {
   @apply block px-4 py-2;
 }
-/* 
-div > * {
+
+* > * {
   border: 1px solid red;
-} */
+}
