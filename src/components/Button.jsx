@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-function Button({ children, onClick, disabled, type, to }) {
+function Button({ children, onClick, disabled, type, to, className }) {
   const base =
     "inline-block rounded-full transition-colors duration-300 bg-black hover:bg-black hover:bg-opacity-50";
 
@@ -13,16 +13,18 @@ function Button({ children, onClick, disabled, type, to }) {
     small: base + " px-2 py-0.5 md:px-3 md:py-0.5 text-xs",
   };
 
+  const combinedClassName = `${styles[type]} ${className}`;
+
   if (to) {
     return (
-      <Link to={to} className={styles[type]}>
+      <Link to={to} className={combinedClassName}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button disabled={disabled} onClick={onClick} className={styles[type]}>
+    <button disabled={disabled} onClick={onClick} className={combinedClassName}>
       {children}
     </button>
   );

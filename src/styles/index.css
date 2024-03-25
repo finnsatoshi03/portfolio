@@ -37,7 +37,34 @@ a.nav-links {
   height: 50px;
   width: 25px;
   border-top-left-radius: 24px;
-  box-shadow: 0 -25px 0 0 white; /* This is where the magic happens! */
+  box-shadow: 0 -25px 0 0 white;
+}
+
+.inverted-border-radius-button::before {
+  content: "";
+  position: absolute;
+
+  /* background-color: #0074d9; */
+  rotate: 180deg;
+  right: 36px;
+  top: 0px;
+  height: 15px;
+  width: 25px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -10px 0 0 white;
+}
+.inverted-border-radius-button::after {
+  content: "";
+  position: absolute;
+
+  /* background-color: #0074d9; */
+  rotate: 0;
+  right: 36px;
+  top: 25px;
+  height: 10px;
+  width: 25px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 -5px 0 0 white;
 }
 
 /* * > * {

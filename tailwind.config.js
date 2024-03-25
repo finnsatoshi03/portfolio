@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Noto Sans", "sans-serif"],
+        sans: "Nunito, sans-serif",
       },
       colors: {
         black: "#252525",

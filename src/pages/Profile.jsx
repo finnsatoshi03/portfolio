@@ -1,5 +1,5 @@
-import Button from "../components/Button";
 import Socials from "../components/Socials";
+import Highlight from "../components/Highlights";
 
 function Profile() {
   return (
@@ -9,11 +9,7 @@ function Profile() {
         alt="My Profile"
         className="h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-top"
       />
-      <div className="absolute left-12 top-1/2 z-10">
-        <Button type="secondary">
-          <p className="text-sm">Clean Code*</p>
-        </Button>
-      </div>
+      <Highlight title="Clean Code*" />
       {/* <div id="curved-corner-bottomleft"></div> */}
       <Socials />
     </div>
