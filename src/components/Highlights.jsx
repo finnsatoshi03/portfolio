@@ -1,17 +1,8 @@
 import { useState } from "react";
 import Subtitle from "./Subtitle";
 
-function Highlights({ title, left = "", top = "", right = "", bottom = "" }) {
+function Highlights({ title, pos }) {
   const base = "inline-block rounded-full bg-white px-3 py-2 md:px-4 md:py-2";
-
-  const positionClasses = [
-    left && `left-${left}`,
-    top && `top-${top}`,
-    right && `right-${right}`,
-    bottom && `bottom-${bottom}`,
-  ]
-    .filter(Boolean)
-    .join(" ");
 
   const [isSubtitleOpen, setSubtitleOpen] = useState(false);
   const [subtitlePosition, setSubtitlePosition] = useState("");
@@ -23,7 +14,7 @@ function Highlights({ title, left = "", top = "", right = "", bottom = "" }) {
 
   return (
     <div
-      className={`absolute ${positionClasses} z-10 flex cursor-pointer gap-4`}
+      className={`sample absolute ${pos} z-10 flex cursor-pointer gap-4`}
       onMouseLeave={() => setSubtitleOpen(false)}
     >
       <div

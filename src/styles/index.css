@@ -1,3 +1,5 @@
+@import "shapes.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,59 +14,17 @@ a.nav-links {
   @apply mx-1 block rounded-full px-3 py-1 hover:border-black hover:border-opacity-10 hover:bg-black hover:bg-opacity-10 md:px-4 md:py-1;
 }
 
-.inverted-border-radius::before {
-  content: "";
-  position: absolute;
-
-  /* background-color: #0074d9; */
-  rotate: 180deg;
-  left: -25px;
-  top: 1px;
-  height: 50px;
-  width: 25px;
-  border-top-left-radius: 24px;
-  box-shadow: 0 -25px 0 0 white; /* This is where the magic happens! */
+.pos-1 {
+  top: 30%;
+  right: 2.5rem;
 }
-
-.inverted-border-radius::after {
-  content: "";
-  position: absolute;
-
-  /* background-color: #0074d9; */
-  rotate: 180deg;
-  right: 0;
-  top: -97%;
-  height: 50px;
-  width: 25px;
-  border-top-left-radius: 24px;
-  box-shadow: 0 -25px 0 0 white;
+.pos-2 {
+  top: 33%;
+  left: 3rem;
 }
-
-.inverted-border-radius-button::before {
-  content: "";
-  position: absolute;
-
-  /* background-color: #0074d9; */
-  rotate: 180deg;
-  right: 40px;
-  top: 0px;
-  height: 15px;
-  width: 25px;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 -10px 0 0 white;
-}
-.inverted-border-radius-button::after {
-  content: "";
-  position: absolute;
-
-  /* background-color: #0074d9; */
-  rotate: 0;
-  right: 40px;
-  top: 25px;
-  height: 10px;
-  width: 25px;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 -5px 0 0 white;
+.pos-3 {
+  top: 66%;
+  left: 1.5rem;
 }
 
 /* * > * {

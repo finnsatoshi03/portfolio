@@ -2,9 +2,9 @@ import Socials from "../components/Socials";
 import Highlight from "../components/Highlights";
 
 const highlights = [
-  { title: "Clean Code*", left: "12", top: "2/3" },
-  { title: "Eco UX*", left: "24", top: "1/3" },
-  { title: "Eye Artistry*", right: "10", top: "[30%]" },
+  { title: "Clean Code*", pos: "pos-1" },
+  { title: "Eco UX*", pos: "pos-2" },
+  { title: "Eye Artistry*", pos: "pos-3" },
 ];
 
 function Profile() {
@@ -13,16 +13,10 @@ function Profile() {
       <img
         src="/profile.jpg"
         alt="My Profile"
-        className="h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-top"
+        className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-top"
       />
       {highlights.map((highlight, index) => (
-        <Highlight
-          key={index}
-          title={highlight.title}
-          top={highlight.top}
-          left={highlight.left}
-          right={highlight.right}
-        />
+        <Highlight key={index} title={highlight.title} pos={highlight.pos} />
       ))}
       <Socials />
     </div>
