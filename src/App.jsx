@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AppLayout />}>
+        <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<Home />} />
           <Route path="projects" element={<Projects />} />
@@ -20,7 +20,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
         </Route>
-
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

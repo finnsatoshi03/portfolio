@@ -5,7 +5,7 @@ import Profile from "../pages/Profile";
 
 function AppLayout() {
   return (
-    <div className="grid min-h-screen grid-cols-2 gap-10 px-8 py-6">
+    <div className="grid min-h-screen grid-cols-[1fr_0.8fr] gap-10 px-8 py-6">
       <Sidebar />
       <Profile />
       {/* <main>
