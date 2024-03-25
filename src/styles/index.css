@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a.active {
+  @apply inline-block list-disc rounded-full border border-black px-3 py-1 transition-colors duration-300 hover:border-black hover:border-opacity-10 hover:bg-black hover:bg-opacity-10 md:px-4 md:py-1;
+}
+a.active::before {
+  content: "• ";
+}
+a.nav-links {
+  @apply block px-4 py-2;
+}
+/* 
+div > * {
+  border: 1px solid red;
+} */

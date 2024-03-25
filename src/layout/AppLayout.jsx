@@ -1,16 +1,19 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "./Sidebar";
 import { globalStyles } from "../styles/globalStyles";
+
+import Sidebar from "./Sidebar";
+import Profile from "../pages/Profile";
 
 function AppLayout() {
   const container = globalStyles();
 
   return (
-    <div className={`${container}`}>
+    <div className={`${container} grid grid-cols-2 gap-10`}>
       <Sidebar />
-      <main>
-        <Outlet />
-      </main>
+      <Profile />
+      {/* <main>
+          <Outlet />
+        </main> */}
     </div>
   );
 }
