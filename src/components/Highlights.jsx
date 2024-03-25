@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Subtitle from "./Subtitle";
 
 function Highlights({ title, left = "", top = "", right = "", bottom = "" }) {
   const base = "inline-block rounded-full bg-white px-3 py-2 md:px-4 md:py-2";
@@ -38,15 +39,7 @@ function Highlights({ title, left = "", top = "", right = "", bottom = "" }) {
         <p className="rounded-full bg-blue-200 px-2.5 py-1">&#10003;</p>
       </div>
       {isSubtitleOpen && (
-        <div
-          className={`absolute ${subtitlePosition} flex w-full items-center justify-center rounded-xl bg-black bg-opacity-80 px-6 py-1.5 text-xs text-white`}
-        >
-          {title === "Clean Code*"
-            ? "I highlight efficient coding practices."
-            : title === "Eco UX*"
-              ? "I combine user experience with sustainability"
-              : "I bring your visions to life."}
-        </div>
+        <Subtitle title={title} subtitlePosition={subtitlePosition} />
       )}
     </div>
   );

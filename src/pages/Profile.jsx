@@ -24,9 +24,6 @@ function Profile() {
           right={highlight.right}
         />
       ))}
-      {/* <Highlight title="Clean Code*" top="2/3" left="12" />
-      <Highlight title="Eco UX*" top="1/3" left="24" />
-      <Highlight title="Green Design*" top="1/4" right="10" /> */}
       <Socials />
     </div>
   );
