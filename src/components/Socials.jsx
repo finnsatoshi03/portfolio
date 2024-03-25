@@ -6,13 +6,13 @@ function Socials() {
     <>
       <div className="inverted-border-radius absolute bottom-0 right-0 z-10 rounded-tl-3xl bg-white px-2 py-1.5">
         <div className="relative z-20 flex gap-2">
-          <Button type="rounded">
+          <Button type="rounded" to="https://github.com/finnsatoshi03">
             <Icons name="github" fill="white" size="24" />
           </Button>
-          <Button type="rounded">
+          <Button type="rounded" to="https://m.me/FabulousEggPie/">
             <Icons name="messenger" fill="white" size="24" />
           </Button>
-          <Button type="rounded">
+          <Button type="rounded" to="mailto:finnsatoshi03@gmail.com">
             <Icons name="gmail" fill="white" size="24" />
           </Button>
         </div>
