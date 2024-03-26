@@ -5,11 +5,11 @@ import Profile from "../pages/Profile";
 
 function AppLayout() {
   const location = useLocation();
-  const isHome = location.pathname === "/home";
+  const onHome = location.pathname === "/home";
 
   return (
     <div
-      className={`${isHome ? "grid min-h-screen grid-cols-[1fr_0.8fr] gap-10" : ""} px-8 py-6`}
+      className={`${onHome ? "grid min-h-screen grid-cols-[1fr_0.8fr] gap-10" : ""} px-8 py-6`}
     >
       <div className="flex flex-col gap-4">
         <Sidebar />
@@ -17,7 +17,7 @@ function AppLayout() {
           <Outlet />
         </main>
       </div>
-      {isHome ? <Profile /> : null}
+      {onHome ? <Profile /> : null}
     </div>
   );
 }
