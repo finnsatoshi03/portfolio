@@ -14,7 +14,7 @@ function Card({
 
   const styles = {
     primary: `${base} bg-white bg-opacity-20 p-2 gap-4`,
-    secondary: `${base} bg-white bg-opacity-25 backdrop-blur-xs gap-2 shadow-md border border-white border-opacity-25`,
+    secondary: `${base} bg-white bg-opacity-25 backdrop-blur-sm gap-2 shadow-md border border-white border-opacity-25`,
   };
 
   return (
