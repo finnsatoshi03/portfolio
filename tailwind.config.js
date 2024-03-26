@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         sans: "Nunito, sans-serif",
         roboto: "Roboto Condensed, sans-serif",
-        cursive: "Satisfy, cursive",
+        cursive: "Creation, cursive",
       },
       colors: {
         black: "#252525",

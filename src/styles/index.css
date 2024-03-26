@@ -1,22 +1,9 @@
+@import "base.css";
 @import "shapes.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  @apply transition-all duration-300 ease-in-out;
-}
-
-a.active {
-  @apply inline-block list-disc rounded-full border border-black px-3 py-1 transition-colors duration-300 md:px-4 md:py-1;
-}
-a.active::before {
-  content: "• ";
-}
-a.nav-links {
-  @apply mx-1 block rounded-full px-3 py-1 hover:border-black hover:border-opacity-10 hover:bg-black hover:bg-opacity-10 md:px-4 md:py-1;
-}
 
 .pos-1 {
   top: 30%;
@@ -33,6 +20,13 @@ a.nav-links {
 .topRight {
   top: 2.5rem;
   right: 1.5rem;
+}
+
+.text-stroke {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 /* * > * {

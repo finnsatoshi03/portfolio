@@ -1,0 +1,18 @@
+body {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+a.active {
+  @apply inline-block list-disc rounded-full border border-black px-3 py-1 transition-colors duration-300 md:px-4 md:py-1;
+}
+a.active::before {
+  content: "• ";
+}
+a.nav-links {
+  @apply mx-1 block rounded-full px-3 py-1 hover:border-black hover:border-opacity-10 hover:bg-black hover:bg-opacity-10 md:px-4 md:py-1;
+}
+
+@font-face {
+  font-family: "Creation";
+  src: url(/public/fonts/Creattion\ Demo.otf);
+}
