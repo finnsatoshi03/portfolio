@@ -9,6 +9,8 @@ function Card({
   buttonText,
   type,
   icon,
+  onMouseEnter,
+  onMouseLeave,
 }) {
   const base = `${pos} absolute inline-flex items-center rounded-3xl xl:rounded-[2rem]`;
 
@@ -18,7 +20,11 @@ function Card({
   };
 
   return (
-    <div className={`${inProfile ? styles[type] : ""}`}>
+    <div
+      className={`${inProfile ? styles[type] : ""}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <img
         src="https://placehold.co/400"
         alt="Recent Project"
