@@ -31,7 +31,7 @@
 }
 
 .animate-slide-toLeft {
-  animation: slideLeft 15s linear infinite;
+  /* animation: slideLeft 15s linear infinite; */
 }
 .animate-slide-toLeft:hover {
   animation-play-state: paused;
@@ -45,7 +45,7 @@
   }
 }
 .animate-slide-toRight {
-  animation: slideRight 15s linear infinite;
+  /* animation: slideRight 15s linear infinite; */
 }
 .animate-slide-toRight:hover {
   animation-play-state: paused;
