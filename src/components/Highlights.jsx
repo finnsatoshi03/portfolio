@@ -27,7 +27,7 @@ function Highlights({ title, pos }) {
         className="rounded-full bg-white px-1.5 py-1"
         onMouseEnter={() => handleMouseEnter("-right-6 top-14")}
       >
-        <p className="rounded-full bg-blue-200 px-2.5 py-1">&#10003;</p>
+        <p className="rounded-full bg-green-300 px-2.5 py-1">&#10003;</p>
       </div>
       {isSubtitleOpen && (
         <Subtitle title={title} subtitlePosition={subtitlePosition} />

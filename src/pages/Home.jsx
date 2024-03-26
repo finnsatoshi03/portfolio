@@ -4,13 +4,13 @@ function Home() {
       <h1 className="font-roboto relative text-right font-bold tracking-tighter lg:text-[4.5rem] lg:leading-[4rem] xl:text-[6.5rem] xl:leading-[5rem]">
         Let's Build Something Together
         <svg
-          width="900"
+          width="500"
           height="200"
-          viewBox="0 0 900 150"
-          className="absolute -right-[16rem] -top-[4.5rem] -rotate-[18deg]"
+          viewBox="0 0 500 120"
+          className="absolute -top-[2rem] right-[10rem] -rotate-[18deg]"
         >
           <text
-            className="text-stroke font-cursive fill-white stroke-black text-[6.5rem] tracking-normal"
+            className="text-stroke font-cursive fill-white stroke-green-700 text-[6.5rem] tracking-normal"
             x="250"
             y="100"
           >

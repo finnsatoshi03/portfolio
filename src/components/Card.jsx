@@ -35,7 +35,7 @@ function Card({
         <h2 className="mb-1.5 w-3/4 font-bold leading-4">{title}</h2>
         <Button
           type={type === "secondary" ? "" : "small"}
-          className="self-end rounded-full bg-white p-1 hover:bg-blue-200"
+          className="self-end rounded-full bg-white p-1 hover:bg-green-300"
         >
           {!icon ? buttonText : icon}
         </Button>
