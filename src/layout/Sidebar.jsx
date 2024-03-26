@@ -5,7 +5,7 @@ function Sidebar() {
   return (
     <>
       {/* main nav */}
-      <div className="flex items-center justify-between self-start">
+      <div className="flex w-full items-center justify-between self-start">
         <Logo />
         <MainNav />
       </div>
