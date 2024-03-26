@@ -23,10 +23,11 @@
 }
 
 .text-stroke {
-  color: black;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  stroke-linejoin: round;
+  text-anchor: middle;
+  paint-order: stroke fill;
+  /* stroke: white; */
+  stroke-width: 3px;
 }
 
 /* * > * {
