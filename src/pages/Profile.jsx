@@ -1,6 +1,6 @@
 import Socials from "../components/Socials";
 import Highlight from "../components/Highlights";
-import Button from "../components/Button";
+import Card from "../components/Card";
 
 const highlights = [
   { title: "Clean Code*", pos: "pos-1" },
@@ -16,26 +16,32 @@ function Profile() {
         alt="My Profile"
         className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-right-top"
       />
-      <div className="absolute right-6 top-10 inline-flex items-center gap-4 rounded-[2rem] bg-white bg-opacity-20 p-2">
-        <img
-          src="https://placehold.co/400"
-          alt="Recent Project"
-          className="w-[6vw] rounded-3xl"
-        />
-        <div>
-          <p className="text-sm">Recent Project</p>
-          <h2 className="mb-1.5 w-3/4 font-bold leading-4">
-            Recent Project Title
-          </h2>
-          <Button type="small" className="bg-white hover:bg-blue-200">
-            View
-          </Button>
-        </div>
-      </div>
+      <Card
+        inProfile={true}
+        label="Recent Project"
+        title="Recent Project Title"
+        buttonText="View"
+        pos="topRight"
+        type="primary"
+      />
       {highlights.map((highlight, index) => (
         <Highlight key={index} title={highlight.title} pos={highlight.pos} />
       ))}
       <Socials />
+      <Card
+        inProfile={true}
+        title="Project 1"
+        icon={
+          <img
+            width="15"
+            height="15"
+            src="https://img.icons8.com/ios-glyphs/60/sort-right.png"
+            alt="sort-right"
+          />
+        }
+        pos="botLeft"
+        type="secondary"
+      />
     </div>
   );
 }
