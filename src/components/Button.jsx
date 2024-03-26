@@ -6,7 +6,7 @@ function Button({ children, onClick, disabled, type, to, className }) {
     "inline-block rounded-full transition-colors duration-300 bg-black hover:bg-black hover:bg-opacity-50";
 
   const styles = {
-    primary: base + "px-3 py-1 md:px-4 md:py-1",
+    primary: base + "px-3 py-2 md:px-4 md:py-2",
     secondary:
       "inline-block rounded-full transition-colors duration-300 bg-white hover:bg-black hover:bg-opacity-20 px-3 py-2 md:px-4 md:py-2",
     rounded: `${base} p-1 md:p-2`,

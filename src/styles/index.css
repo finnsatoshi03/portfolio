@@ -31,7 +31,7 @@
 }
 
 .animate-slide-toLeft {
-  /* animation: slideLeft 15s linear infinite; */
+  animation: slideLeft 15s linear infinite;
 }
 .animate-slide-toLeft:hover {
   animation-play-state: paused;
@@ -45,7 +45,7 @@
   }
 }
 .animate-slide-toRight {
-  /* animation: slideRight 15s linear infinite; */
+  animation: slideRight 15s linear infinite;
 }
 .animate-slide-toRight:hover {
   animation-play-state: paused;
@@ -56,6 +56,28 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+.spin {
+  animation: rotate 25s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-reverse {
+  animation: spin-reverse 25s linear infinite;
+}
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 
