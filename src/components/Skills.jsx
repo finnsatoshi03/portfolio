@@ -2,7 +2,7 @@ function Skills({ highlight = false, title, description, icon }) {
   return (
     <>
       <p
-        className={`inline-flex items-center gap-2 ${highlight ? "text-lg" : "text-base"} font-semibold`}
+        className={`inline-flex w-[150px] items-center gap-2 leading-4 ${highlight ? "text-lg" : "text-base"} font-semibold`}
       >
         {icon}
         {title}
