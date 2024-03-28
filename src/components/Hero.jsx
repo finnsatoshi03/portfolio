@@ -107,7 +107,6 @@ const skills = [
     ),
   },
 ];
-
 const positions = [
   {
     x: "left-2/3",
@@ -162,34 +161,40 @@ const positions = [
 ];
 
 function Hero() {
-  const radius = 15;
-
   return (
-    <div className="relative my-12">
-      <h1 className="relative text-right font-roboto font-bold tracking-tighter lg:text-[4.5rem] lg:leading-[4rem] xl:text-[6.5rem] xl:leading-[5rem]">
-        Let's Build Something Together
-        <svg
-          width="500"
-          height="200"
-          viewBox="0 0 500 120"
-          className="absolute -top-[3.5rem] right-[2rem] -rotate-[18deg] xl:-top-[2rem] xl:right-[10rem]"
-        >
-          <text
-            className="text-stroke fill-white stroke-green-700 font-cursive text-[4.5rem] tracking-normal xl:text-[6.5rem]"
-            x="250"
-            y="100"
-          >
-            Amazing
-          </text>
-        </svg>
-        <span className="absolute left-[4rem] top-[4.5rem] xl:left-0 xl:top-[6rem]">
+    <div
+      className="relative mt-12 flex-grow overflow-hidden"
+      style={{ height: "calc(100vh - 10.8rem)" }}
+    >
+      <div className="clamp relative font-roboto font-bold tracking-tighter">
+        <div className="flex w-full flex-col">
+          <h1 className="self-end whitespace-nowrap">Let's Build Something</h1>
+          <div className="together relative self-end">
+            <h1>Together</h1>
+            <svg
+              width="25vw"
+              height="25vh"
+              viewBox="0 0 500 120"
+              className="absolute -left-[19vw] -top-[12vh] -rotate-[18deg]"
+            >
+              <text
+                className="text-stroke fill-white stroke-green-700 font-cursive text-[8.5rem] tracking-normal"
+                x="250"
+                y="100"
+              >
+                Amazing
+              </text>
+            </svg>
+          </div>
+        </div>
+        {/* <span className="absolute left-[4rem] top-[3.5rem] lg:top-[4.5rem] xl:left-0 xl:top-[6rem]">
           <img
-            className="h-[50px] w-[200px] object-cover xl:w-[300px]"
+            className="h-[50px] w-[300px] object-cover"
             src="https://img.icons8.com/sf-ultralight/300/long-arrow-right.png"
             alt="long-arrow-right"
           />
-        </span>
-      </h1>
+        </span> */}
+      </div>
 
       <div className="relative">
         <HeroHighlights />
@@ -210,7 +215,7 @@ function Hero() {
           </Button>
         </div>
       </div>
-      <div className="absolute -bottom-[47rem] -left-56">
+      <div className="absolute -bottom-[20rem] -left-56">
         <div
           className="spin relative h-[30rem] w-[30rem] rounded-full border border-gray-400"
           data-spin="true"

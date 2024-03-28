@@ -1,5 +1,6 @@
 @import "base.css";
 @import "shapes.css";
+@import "animations.css";
 
 @tailwind base;
 @tailwind components;
@@ -30,58 +31,20 @@
   stroke-width: 3px;
 }
 
-.animate-slide-toLeft {
-  animation: slideLeft 15s linear infinite;
+.clamp {
+  font-size: clamp(2rem, calc(3vw + 3rem), 6.5rem);
+  line-height: clamp(2rem, 4vw + 2rem, 5rem);
 }
-.animate-slide-toLeft:hover {
-  animation-play-state: paused;
+.together * {
+  border: 1px solid red;
 }
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-.animate-slide-toRight {
-  animation: slideRight 15s linear infinite;
-}
-.animate-slide-toRight:hover {
-  animation-play-state: paused;
-}
-@keyframes slideRight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.spin {
-  animation: rotate 25s linear infinite;
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.spin-reverse {
-  animation: spin-reverse 25s linear infinite;
-}
-@keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
+/* .bot > * {
+  border: 1px solid blue;
+} */
+/* .clamp {
+  font-size: clamp(1.5rem, 5vw + 3rem, 6.5rem);
+  line-height: 5rem;
+} */
 /* * > * {
   border: 1px solid red;
 } */

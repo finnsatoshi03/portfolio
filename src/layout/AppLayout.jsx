@@ -13,7 +13,7 @@ function AppLayout() {
     >
       <div className="flex flex-col gap-4">
         <Sidebar />
-        <main className="">
+        <main className="h-full">
           <Outlet />
         </main>
       </div>
