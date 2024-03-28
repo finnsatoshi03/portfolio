@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
+import useMobileView from "../hooks/useMobileView";
 
 function MainNav() {
+  const isMobile = useMobileView();
+
   return (
-    <nav>
+    <nav style={{ display: isMobile ? "none" : "block" }}>
       <ul className="flex items-center justify-between">
         <li className="flex-grow">
           <NavLink to="/home" className="nav-links">

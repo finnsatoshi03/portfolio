@@ -21,10 +21,10 @@ function Highlights({ title, pos }) {
         className={`${base} inverted-border-radius-button flex items-center justify-center`}
         onMouseEnter={() => handleMouseEnter("top-14")}
       >
-        <p className="text-sm">{title}</p>
+        <p className="text-xs md:text-sm">{title}</p>
       </div>
       <div
-        className="rounded-full bg-white px-1.5 py-1"
+        className="rounded-full bg-white px-1.5 py-1 text-xs md:text-base"
         onMouseEnter={() => handleMouseEnter("-right-6 top-14")}
       >
         <p className="rounded-full bg-green-300 px-2.5 py-1">&#10003;</p>

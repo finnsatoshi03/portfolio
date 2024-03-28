@@ -52,3 +52,13 @@
   border-radius: 10px 10px 0 0;
   box-shadow: 0 -5px 0 0 white;
 }
+@media (max-width: 700px) {
+  .inverted-border-radius-button::before {
+    top: -3px;
+    right: 37px;
+  }
+  .inverted-border-radius-button::after {
+    top: 22px;
+    right: 37px;
+  }
+}

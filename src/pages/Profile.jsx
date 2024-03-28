@@ -1,9 +1,8 @@
 import Socials from "../components/Socials";
 import Highlight from "../components/Highlights";
 import Card from "../components/Card";
-import Button from "../components/Button";
-import { useState } from "react";
 import CardsSlide from "../components/CardsSlide";
+import useMobileView from "../hooks/useMobileView";
 
 const highlights = [
   { title: "Clean Code*", pos: "pos-1" },
@@ -12,12 +11,13 @@ const highlights = [
 ];
 
 function Profile() {
+  const isMobile = useMobileView();
+
   return (
     <div
       className="relative"
       style={{
-        height:
-          window.innerWidth < 576 ? "calc(70vh - 6rem)" : "calc(100vh - 3rem)",
+        height: isMobile ? "calc(70vh - 6rem)" : "calc(100vh - 3rem)",
       }}
     >
       <img

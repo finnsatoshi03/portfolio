@@ -1,4 +1,5 @@
 import Icons from "../assets/icons";
+import useMobileView from "../hooks/useMobileView";
 import Button from "./Button";
 import HeroHeader from "./HeroHeader";
 import HeroHighlights from "./HeroHighlights";
@@ -162,14 +163,13 @@ const positions = [
 ];
 
 function Hero() {
+  const isMobile = useMobileView();
+
   return (
     <div
       className="relative mt-12 flex-grow overflow-hidden"
       style={{
-        height:
-          window.innerWidth < 576
-            ? "calc(70vh - 10.8rem)"
-            : "calc(100vh - 10.8rem)",
+        height: isMobile ? "calc(70vh - 10.8rem)" : "calc(100vh - 10.8rem)",
       }}
     >
       <HeroHeader />

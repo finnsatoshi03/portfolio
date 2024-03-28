@@ -52,7 +52,7 @@ function CardsSlide() {
   }, [startSlide, stopSlide]);
 
   const base =
-    "rounded-full border border-white bg-white px-0.5 py-2 hover:border hover:border-black hover:bg-transparent";
+    "rounded-full border border-white bg-white px-0.5 py-1 sm:py-2 hover:border hover:border-black hover:bg-transparent";
 
   return (
     <>
@@ -98,7 +98,7 @@ function CardsSlide() {
         );
       })}
       <div
-        className="absolute bottom-4 left-[19.5rem] flex flex-col gap-2"
+        className="absolute bottom-4 left-[12.5rem] flex flex-col gap-2 sm:left-[19.5rem]"
         onMouseEnter={() => {
           setIsHovered(true);
           stopSlide();
