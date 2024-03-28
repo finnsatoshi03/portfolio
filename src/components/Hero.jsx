@@ -1,5 +1,6 @@
 import Icons from "../assets/icons";
 import Button from "./Button";
+import HeroHeader from "./HeroHeader";
 import HeroHighlights from "./HeroHighlights";
 import Skills from "./Skills";
 
@@ -164,45 +165,21 @@ function Hero() {
   return (
     <div
       className="relative mt-12 flex-grow overflow-hidden"
-      style={{ height: "calc(100vh - 10.8rem)" }}
+      style={{
+        height:
+          window.innerWidth < 576
+            ? "calc(70vh - 10.8rem)"
+            : "calc(100vh - 10.8rem)",
+      }}
     >
-      <div className="clamp relative font-roboto font-bold tracking-tighter">
-        <div className="flex w-full flex-col">
-          <h1 className="self-end whitespace-nowrap">Let's Build Something</h1>
-          <div className="together relative self-end">
-            <h1>Together</h1>
-            <svg
-              width="25vw"
-              height="25vh"
-              viewBox="0 0 500 120"
-              className="absolute -left-[19vw] -top-[12vh] -rotate-[18deg]"
-            >
-              <text
-                className="text-stroke fill-white stroke-green-700 font-cursive text-[8.5rem] tracking-normal"
-                x="250"
-                y="100"
-              >
-                Amazing
-              </text>
-            </svg>
-          </div>
-        </div>
-        {/* <span className="absolute left-[4rem] top-[3.5rem] lg:top-[4.5rem] xl:left-0 xl:top-[6rem]">
-          <img
-            className="h-[50px] w-[300px] object-cover"
-            src="https://img.icons8.com/sf-ultralight/300/long-arrow-right.png"
-            alt="long-arrow-right"
-          />
-        </span> */}
-      </div>
-
+      <HeroHeader />
       <div className="relative">
         <HeroHighlights />
         <div className="absolute top-28 flex items-center justify-center gap-2 xl:top-36">
           <Button
             type="primary"
             to="/contact"
-            className="text-sm text-white xl:text-base"
+            className="px-3 text-xs text-white md:text-sm xl:text-base"
           >
             Contact Me &rarr;
           </Button>
@@ -215,7 +192,7 @@ function Hero() {
           </Button>
         </div>
       </div>
-      <div className="absolute -bottom-[20rem] -left-56">
+      <div className="relative -bottom-[15rem] -left-56">
         <div
           className="spin relative h-[30rem] w-[30rem] rounded-full border border-gray-400"
           data-spin="true"

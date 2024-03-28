@@ -98,7 +98,7 @@ function CardsSlide() {
         );
       })}
       <div
-        className="absolute bottom-4 left-[12.5rem] flex flex-col gap-2"
+        className="absolute bottom-4 left-[19.5rem] flex flex-col gap-2"
         onMouseEnter={() => {
           setIsHovered(true);
           stopSlide();

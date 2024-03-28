@@ -15,7 +15,7 @@
   left: 3rem;
 }
 .pos-3 {
-  top: 66%;
+  top: 60%;
   left: 1.5rem;
 }
 .topRight {
@@ -35,9 +35,9 @@
   font-size: clamp(2rem, calc(3vw + 3rem), 6.5rem);
   line-height: clamp(2rem, 4vw + 2rem, 5rem);
 }
-.together * {
+/* .together * {
   border: 1px solid red;
-}
+} */
 /* .bot > * {
   border: 1px solid blue;
 } */

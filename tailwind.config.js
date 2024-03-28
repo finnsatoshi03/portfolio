@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: "Nunito, sans-serif",
+        serif: "Playfair Display, serif",
         roboto: "Roboto Condensed, sans-serif",
         cursive: "Creation, cursive",
       },

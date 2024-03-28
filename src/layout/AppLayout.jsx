@@ -9,7 +9,7 @@ function AppLayout() {
 
   return (
     <div
-      className={`${onHome ? "grid min-h-screen grid-cols-[1fr_0.8fr] gap-10" : ""} px-8 py-6`}
+      className={`${onHome ? "grid min-h-screen w-screen grid-rows-[1fr_0.5fr] gap-10 lg:grid-cols-[1fr_auto] lg:grid-rows-1" : ""} px-8 py-6`}
     >
       <div className="flex flex-col gap-4">
         <Sidebar />

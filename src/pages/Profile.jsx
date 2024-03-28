@@ -13,7 +13,13 @@ const highlights = [
 
 function Profile() {
   return (
-    <div className="relative" style={{ height: "calc(100vh - 3rem)" }}>
+    <div
+      className="relative"
+      style={{
+        height:
+          window.innerWidth < 576 ? "calc(70vh - 6rem)" : "calc(100vh - 3rem)",
+      }}
+    >
       <img
         src="/profile.jpg"
         alt="My Profile"

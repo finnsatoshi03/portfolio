@@ -15,8 +15,8 @@ function Card({
   const base = `${pos} absolute inline-flex items-center rounded-3xl xl:rounded-[2rem]`;
 
   const styles = {
-    primary: `${base} bg-white bg-opacity-20 p-2 gap-4`,
-    secondary: `${base} bg-white bg-opacity-25 backdrop-blur-sm gap-2 shadow-md border border-white border-opacity-25`,
+    primary: `${base} bg-white bg-opacity-20 p-2 gap-4 w-[15rem]`,
+    secondary: `${base} bg-white bg-opacity-25 backdrop-blur-sm gap-2 shadow-md border border-white border-opacity-25 w-[18rem] `,
   };
 
   return (
@@ -28,14 +28,14 @@ function Card({
       <img
         src="https://placehold.co/400"
         alt="Recent Project"
-        className="w-[6vw] rounded-2xl xl:rounded-3xl"
+        className={`${type === "secondary" ? "w-[8rem]" : "w-[5rem]"} rounded-2xl xl:rounded-3xl`}
       />
-      <div className={type === "secondary" ? "flex flex-col pr-2" : ""}>
+      <div className={type === "secondary" ? "flex flex-col py-2 pr-3" : ""}>
         <p className="text-sm">{label}</p>
-        <h2 className="mb-1.5 w-3/4 font-bold leading-4">{title}</h2>
+        <h2 className="mb-1.5 font-bold leading-4">{title}</h2>
         <Button
           type={type === "secondary" ? "" : "small"}
-          className="self-end rounded-full bg-white p-1 hover:bg-green-300"
+          className="absolute bottom-4 right-4 rounded-full bg-white p-1 hover:bg-green-300"
         >
           {!icon ? buttonText : icon}
         </Button>
