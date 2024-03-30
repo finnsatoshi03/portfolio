@@ -24,11 +24,15 @@ function Sidebar() {
             onClick={handleMenuClick}
           />
         ) : (
-          <MainNav sidebar={isSidebarOpen} />
+          <MainNav />
         )}
       </div>
-      {isMobile && isSidebarOpen && (
-        <MainNav sidebar={true} setSidebar={setIsSidebarOpen} />
+      {isMobile && (
+        <div
+          className={`fixed right-0 top-0 z-50 h-full w-[60vw] transform rounded-s-[3rem] bg-black p-4 transition-all duration-300 ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <MainNav sidebar={isSidebarOpen} setSidebar={setIsSidebarOpen} />
+        </div>
       )}
     </>
   );

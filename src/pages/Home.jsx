@@ -3,9 +3,9 @@ import Hero from "../components/Hero";
 import useVisibilityChange from "../hooks/useVisibilityChange";
 
 function Home() {
-  useEffect(() => {
-    useVisibilityChange();
-  }, []);
+  useVisibilityChange();
+  // useEffect(() => {
+  // }, []);
 
   return (
     <>

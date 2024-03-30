@@ -1,28 +1,18 @@
 import { useEffect, useRef } from "react";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 import { NavLink } from "react-router-dom";
+import useVisibilityChange from "../hooks/useVisibilityChange";
 
 function MainNav({ sidebar, setSidebar }) {
   const sidebarRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setSidebar(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [sidebar, setSidebar]);
-
-  const sidebarStyles = `fixed right-0 top-0 z-50 h-full w-[60vw] rounded-s-[3rem] bg-black p-4 transition-transform duration-300 transform ${sidebar ? "translate-x-0" : "translate-x-full"}`;
+  useOutsideClick(sidebarRef, () => setSidebar(false));
+  useVisibilityChange(sidebar);
 
   return (
-    <nav ref={sidebarRef} className={sidebarStyles}>
+    <nav ref={sidebarRef}>
       <ul
-        className={`flex items-center justify-between ${sidebar && "w-full flex-col items-end justify-start text-white"}`}
+        className={`transition-all duration-300 ease-in-out ${sidebar ? "w-full flex-col items-end justify-start px-2 py-3 text-white" : "flex items-center justify-between"}`}
       >
         <li className="flex-grow">
           <NavLink to="/home" className="nav-links">

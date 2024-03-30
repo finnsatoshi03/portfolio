@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Subtitle from "./Subtitle";
+import useMobileView from "../hooks/useMobileView";
 
 function Highlights({ title, pos }) {
+  const isMobile = useMobileView();
   const base = "inline-block rounded-full bg-white px-3 py-2 md:px-4 md:py-2";
 
   const [isSubtitleOpen, setSubtitleOpen] = useState(false);
@@ -30,7 +32,7 @@ function Highlights({ title, pos }) {
         onMouseEnter={() =>
           handleMouseEnter(
             title === "Eye Artistry*"
-              ? "bottom-14 -right-6"
+              ? "sm:-right-6 sm:top-14 bottom-14 -right-6"
               : "-right-6 top-14",
           )
         }

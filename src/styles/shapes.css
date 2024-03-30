@@ -55,10 +55,10 @@
 @media (max-width: 700px) {
   .inverted-border-radius-button::before {
     top: -4px;
-    right: 37.5px;
+    right: 36px;
   }
   .inverted-border-radius-button::after {
     top: 21px;
-    right: 37.5px;
+    right: 36px;
   }
 }
