@@ -21,6 +21,7 @@ function Sidebar() {
             width="30"
             src="https://img.icons8.com/material-rounded/300/menu--v1.png"
             alt="menu--v1"
+            className="cursor-pointer"
             onClick={handleMenuClick}
           />
         ) : (
