@@ -12,6 +12,7 @@ export default {
       colors: {
         black: "#252525",
         brown: "#b2a47f",
+        gray200: "#c2c2c2",
       },
     },
   },
