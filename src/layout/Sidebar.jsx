@@ -28,11 +28,19 @@ function Sidebar() {
         )}
       </div>
       {isMobile && (
-        <div
-          className={`fixed right-0 top-0 z-50 h-full w-[60vw] transform rounded-s-[3rem] bg-black p-4 transition-all duration-300 ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
-        >
-          <MainNav sidebar={isSidebarOpen} setSidebar={setIsSidebarOpen} />
-        </div>
+        <>
+          <div
+            className={`fixed right-0 top-0 z-[999999] h-full w-[60vw] transform rounded-s-[3rem] bg-black p-4 transition-all duration-300 ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
+          >
+            <MainNav sidebar={isSidebarOpen} setSidebar={setIsSidebarOpen} />
+          </div>
+          {isSidebarOpen && (
+            <div
+              className="fixed inset-0 z-[999998] opacity-80 backdrop-blur-sm"
+              onClick={() => setIsSidebarOpen(false)}
+            />
+          )}
+        </>
       )}
     </>
   );
