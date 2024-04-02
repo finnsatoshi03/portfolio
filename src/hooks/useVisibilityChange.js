@@ -9,13 +9,13 @@ function useVisibilityChange(sidebar) {
         ".spin, .spin-reverse, .animate-slide-toRight, .animate-slide-toLeft",
       );
       if (!isWindowActive || sidebar) {
-        console.log("Window is not active or sidebar is active");
+        // console.log("Window is not active or sidebar is active");
         elements.forEach((element) => {
           // console.log("Pausing animation for element:", element);
           element.style.animationPlayState = "paused";
         });
       } else {
-        console.log("Window is active and sidebar is not active");
+        // console.log("Window is active and sidebar is not active");
         elements.forEach((element) => {
           // console.log("Resuming animation for element:", element);
           element.style.animationPlayState = "running";

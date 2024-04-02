@@ -69,7 +69,7 @@ const Header = () => (
   </>
 );
 
-const NavItem = ({ to, className, label, sidebar, setSidebar }) => (
+const NavItem = ({ to, className, label, sidebar, setSidebar = () => {} }) => (
   <li className="flex-grow">
     {sidebar ? (
       <Link to={to} className={className} onClick={() => setSidebar(false)}>
