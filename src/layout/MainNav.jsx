@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useRef } from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import useVisibilityChange from "../hooks/useVisibilityChange";
+import Icons from "../assets/icons";
 
 function MainNav({ sidebar, setSidebar }) {
   const sidebarRef = useRef(null);
@@ -11,10 +13,10 @@ function MainNav({ sidebar, setSidebar }) {
 
   const navLinkClass = sidebar ? "" : "nav-links";
 
-  return (
+  const navContent = (
     <nav ref={sidebarRef}>
       <ul
-        className={`transition-all duration-300 ease-in-out ${sidebar ? "flex flex-col gap-2 px-4 py-3 text-white" : "flex items-center justify-between"}`}
+        className={`transition-all duration-300 ease-in-out ${sidebar ? "flex flex-col justify-between gap-2 px-4 py-3 text-white" : "flex items-center justify-between"}`}
       >
         {sidebar && <Header />}
         <NavItem
@@ -23,6 +25,8 @@ function MainNav({ sidebar, setSidebar }) {
           label="Home"
           sidebar={sidebar}
           setSidebar={setSidebar}
+          name={"home"}
+          activeIcon={"homeActive"}
         />
         <NavItem
           to="/projects"
@@ -30,6 +34,8 @@ function MainNav({ sidebar, setSidebar }) {
           label="Projects"
           sidebar={sidebar}
           setSidebar={setSidebar}
+          name={"projects"}
+          activeIcon={"projectsActive"}
         />
         <NavItem
           to="/archives"
@@ -37,6 +43,8 @@ function MainNav({ sidebar, setSidebar }) {
           label="Archives"
           sidebar={sidebar}
           setSidebar={setSidebar}
+          name={"archives"}
+          activeIcon={"archivesActive"}
         />
         <NavItem
           to="/about"
@@ -44,6 +52,8 @@ function MainNav({ sidebar, setSidebar }) {
           label="About Me"
           sidebar={sidebar}
           setSidebar={setSidebar}
+          name={"about"}
+          activeIcon={"aboutActive"}
         />
         <NavItem
           to="/contact"
@@ -51,9 +61,20 @@ function MainNav({ sidebar, setSidebar }) {
           label="Contact"
           sidebar={sidebar}
           setSidebar={setSidebar}
+          name={"contact"}
+          activeIcon={"contactActive"}
         />
       </ul>
     </nav>
+  );
+
+  return sidebar ? (
+    <div className="flex h-full flex-col justify-between">
+      {navContent}
+      <Footer />
+    </div>
+  ) : (
+    navContent
   );
 }
 
@@ -69,18 +90,72 @@ const Header = () => (
   </>
 );
 
-const NavItem = ({ to, className, label, sidebar, setSidebar }) => (
-  <li className="flex-grow">
-    {sidebar ? (
-      <Link to={to} className={className} onClick={() => setSidebar(false)}>
-        {label}
-      </Link>
-    ) : (
-      <NavLink to={to} className={className}>
-        {label}
-      </NavLink>
-    )}
-  </li>
-);
+const Footer = () => {
+  return (
+    <div className="my-3 justify-self-end px-1">
+      <h2 className="mb-1 px-3 pb-1 text-xs font-bold uppercase text-gray200 opacity-60">
+        My Team
+      </h2>
+      <div
+        className="rounded-[2rem] bg-[#4b4b4b] px-1 py-0.5 text-center text-xl text-white hover:cursor-pointer"
+        onClick={() => {}}
+      >
+        <img
+          src="https://placehold.co/600x400/png"
+          className="m-1 h-[4rem] rounded-[1.5rem] object-cover"
+          style={{ width: "calc(100% - 0.5rem)" }}
+        />
+
+        <div className="py-2">
+          <h3 className="font-montserrat font-black">ZAH</h3>
+          <p className="mx-auto w-2/3 text-xs leading-3">
+            For all your coding needs, we&apos;re Zah-tastic!
+          </p>
+        </div>
+      </div>
+      <p className="font-montserrat mt-4 text-right text-[0.6rem] text-white">
+        &copy; {new Date().getFullYear()} Zah Nelson. All rights reserved.
+      </p>
+    </div>
+  );
+};
+
+const NavItem = ({
+  to,
+  className,
+  label,
+  sidebar,
+  setSidebar = () => {},
+  name,
+  activeIcon,
+}) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+
+  return (
+    <li className="flex-grow">
+      {sidebar ? (
+        <Link to={to} className={className} onClick={() => setSidebar(false)}>
+          <div
+            className={`${!isActive && "opacity-50"} flex items-center gap-3`}
+          >
+            <Icons
+              name={name}
+              activeIcon={activeIcon}
+              isActive={isActive}
+              size={24}
+              fill="white"
+            />
+            {label}
+          </div>
+        </Link>
+      ) : (
+        <NavLink to={to} className={className}>
+          {label}
+        </NavLink>
+      )}
+    </li>
+  );
+};
 
 export default MainNav;

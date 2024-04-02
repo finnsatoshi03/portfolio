@@ -7,6 +7,7 @@ export default {
         sans: "Nunito, sans-serif",
         serif: "Playfair Display, serif",
         roboto: "Roboto Condensed, sans-serif",
+        montserrat: "Montserrat, sans-serif",
         cursive: "Creation, cursive",
       },
       colors: {

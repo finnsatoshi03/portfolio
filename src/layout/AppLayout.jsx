@@ -11,7 +11,7 @@ function AppLayout() {
 
   return (
     <div
-      className={`${onHome ? "grid min-h-screen w-full grid-rows-[1fr_0.5fr] gap-10 lg:grid-cols-[1fr_auto] lg:grid-rows-1" : ""} px-8 py-6`}
+      className={`${onHome ? "grid min-h-screen w-full grid-rows-[1fr_0.5fr] gap-10 xl:grid-cols-[1fr_auto] xl:grid-rows-1" : ""} px-8 py-6`}
     >
       <div className={`flex flex-col gap-4 ${isMobile && "min-w-0"}`}>
         <Sidebar />
