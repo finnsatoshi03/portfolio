@@ -1,3 +1,4 @@
+/* profile (Home) */
 .inverted-border-radius::before {
   content: "";
   position: absolute;
@@ -26,6 +27,7 @@
   box-shadow: 0 -25px 0 0 white;
 }
 
+/* Buttons (Home) */
 .inverted-border-radius-button::before {
   content: "";
   position: absolute;
@@ -61,4 +63,45 @@
     top: 21px;
     right: 36px;
   }
+}
+
+/* Recent (Projects) */
+.project-logo-inverted-border-top-right::before {
+  content: "";
+  position: absolute;
+
+  rotate: 0deg;
+  right: -47px;
+  top: 0px;
+  height: 80px;
+  width: 50px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.project-logo-inverted-border-top-right::after {
+  content: "";
+  position: absolute;
+
+  rotate: 0deg;
+  left: 0;
+  top: 100%;
+  height: 80px;
+  width: 50px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.project-title-container-inverted-border-bottom-left::before {
+  content: "";
+  position: absolute;
+
+  rotate: -90deg;
+  left: 15px;
+  top: -65px;
+  height: 80px;
+  width: 50px;
+  z-index: 10;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
 }
