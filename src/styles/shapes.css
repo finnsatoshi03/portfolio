@@ -98,10 +98,71 @@
 
   rotate: -90deg;
   left: 15px;
+  top: -64px;
+  height: 80px;
+  width: 50px;
+  z-index: 10;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+/* .title-container * {
+  border: 1px solid red;
+} */
+
+.title-container::before {
+  content: "";
+  position: absolute;
+
+  /* background-color: blue; */
+  rotate: -90deg;
+  left: 15px;
   top: -65px;
   height: 80px;
   width: 50px;
   z-index: 10;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.title-tag::before {
+  content: "";
+  position: absolute;
+
+  /* background-color: blue; */
+  transform: rotate(-90deg);
+  right: -49.55px;
+  top: -10px;
+  height: 80px;
+  width: 19px;
+  border-top-left-radius: 2rem;
+  box-shadow: 0 -2rem 0 0 white;
+}
+
+.title-h1-p1::before {
+  content: "";
+  position: absolute;
+
+  /* background-color: blue; */
+  transform: rotate(-90deg);
+  right: -65.5px;
+  bottom: -15.5px;
+  height: 80px;
+  width: 51px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.title-h1-p2::before {
+  content: "";
+  position: absolute;
+
+  /* background-color: blue; */
+  transform: rotate(-90deg);
+  right: -65px;
+  bottom: -15.5px;
+  height: 80px;
+  width: 50px;
   border-top-left-radius: 2.5rem;
   box-shadow: 0 -2.5rem 0 0 white;
 }

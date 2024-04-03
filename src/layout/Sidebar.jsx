@@ -6,6 +6,7 @@ import useMobileView from "../hooks/useMobileView";
 function Sidebar() {
   const isMobile = useMobileView();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // console.log(isSidebarOpen);
 
   const handleMenuClick = () => {
     setIsSidebarOpen(!isSidebarOpen);

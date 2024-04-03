@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react";
-import { useOutsideClick } from "../hooks/useOutsideClick";
 import { Link, NavLink, useLocation } from "react-router-dom";
+
+import { useOutsideClick } from "../hooks/useOutsideClick";
 import useVisibilityChange from "../hooks/useVisibilityChange";
+
 import Icons from "../assets/icons";
 
 function MainNav({ sidebar, setSidebar }) {
@@ -113,7 +115,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <p className="font-montserrat mt-4 text-right text-[0.6rem] text-white">
+      <p className="mt-4 text-right font-montserrat text-[0.6rem] text-white">
         &copy; {new Date().getFullYear()} Zah Nelson. All rights reserved.
       </p>
     </div>

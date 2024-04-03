@@ -1,8 +1,7 @@
 function Projects() {
-  const title = "Sample Long Title";
+  const title = "Sample Long Long long";
   const elementsBase = "px-6 bg-white text-black";
   const roundedCorner = "rounded-tr-[2.5rem]";
-  const relativePosition = "relative";
   const textStyle = "text-[5.5rem]";
 
   const splitTitle = (title) => {
@@ -28,19 +27,19 @@ function Projects() {
 
   const renderTitle = (text) => (
     <h1
-      className={`${elementsBase} ${relativePosition} ${roundedCorner} ${textStyle} w-fit leading-tight`}
+      className={`${textStyle} relative z-10 font-montserrat leading-tight tracking-tighter`}
     >
       {text}
     </h1>
   );
 
   return (
-    <div className="grid h-full grid-cols-[1fr_0.3fr]">
+    <div className="grid h-full grid-cols-[1fr_0.3fr] gap-5">
       <div className="relative h-[82.5vh]">
         <img
-          src="/profile.jpg"
+          src="https://placehold.co/600x400"
           alt="My Profile"
-          className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-right-top"
+          className="left-6 h-full w-full rounded-[2.5rem] object-cover"
         />
 
         <div
@@ -49,14 +48,24 @@ function Projects() {
           <h1 className="relative z-10">Project Logo</h1>
         </div>
 
-        <div className="project-title-container-inverted-border-bottom-left absolute bottom-0 left-0">
-          <p
-            className={`${elementsBase} ${relativePosition} w-fit ${roundedCorner} pt-4`}
+        <div className="title-container absolute bottom-0 left-0 flex flex-col justify-between">
+          <div
+            className={`${elementsBase} title-tag relative w-fit rounded-tr-3xl pt-4`}
           >
-            Sample Tititietie
-          </p>
-          {renderTitle(firstPart)}
-          {secondPart && renderTitle(secondPart)}
+            <p className="relative z-10">Sample Tititietie titietietei</p>
+          </div>
+          <div
+            className={`${elementsBase} ${roundedCorner} title-h1-p1 relative w-fit`}
+          >
+            {renderTitle(firstPart)}
+          </div>
+          {secondPart && (
+            <div
+              className={`${elementsBase} ${roundedCorner} title-h1-p2 relative w-fit`}
+            >
+              {renderTitle(secondPart)}
+            </div>
+          )}
         </div>
       </div>
       <div className="bg-blue-600">Scroller</div>
