@@ -34,7 +34,8 @@ function Projects() {
   );
 
   return (
-    <div className="grid h-full grid-cols-[1fr_0.3fr] gap-5">
+    <div className="grid h-full grid-cols-[1fr_0.3fr] gap-3">
+      {/* project */}
       <div className="relative h-[82.5vh]">
         <img
           src="https://placehold.co/600x400"
@@ -42,12 +43,14 @@ function Projects() {
           className="left-6 h-full w-full rounded-[2.5rem] object-cover"
         />
 
+        {/* project logo */}
         <div
           className={`${elementsBase} project-logo-inverted-border-top-right absolute left-0 top-0 rounded-br-[2.5rem] py-4 text-xl`}
         >
           <h1 className="relative z-10">Project Logo</h1>
         </div>
 
+        {/* title */}
         <div className="title-container absolute bottom-0 left-0 flex flex-col justify-between">
           <div
             className={`${elementsBase} title-tag relative w-fit rounded-tr-3xl pt-4`}
@@ -68,7 +71,41 @@ function Projects() {
           )}
         </div>
       </div>
-      <div className="bg-blue-600">Scroller</div>
+
+      {/* scroller (recent projects) */}
+      <div className="flex h-full flex-col gap-3 overflow-hidden">
+        <h1 className="rounded-full border border-black py-2 text-center">
+          Project Archives
+        </h1>
+        <div className="relative h-[20vh] w-full transition-all duration-300 ease-in-out hover:h-[35vh] hover:cursor-pointer">
+          <img
+            src="https://placehold.co/600x400"
+            alt=""
+            className="h-full w-full rounded-3xl object-cover"
+          />
+        </div>
+        <div className="relative h-[20vh] w-full transition-all duration-300 ease-in-out hover:h-[35vh] hover:cursor-pointer">
+          <img
+            src="https://placehold.co/600x400"
+            alt=""
+            className="h-full w-full rounded-3xl object-cover"
+          />
+        </div>
+        <div className="relative h-[20vh] w-full transition-all duration-300 ease-in-out hover:h-[35vh] hover:cursor-pointer">
+          <img
+            src="https://placehold.co/600x400"
+            alt=""
+            className="h-full w-full rounded-3xl object-cover"
+          />
+        </div>
+        <div className="relative h-[20vh] w-full transition-all duration-300 ease-in-out hover:h-[35vh] hover:cursor-pointer">
+          <img
+            src="https://placehold.co/600x400"
+            alt=""
+            className="h-full w-full rounded-3xl object-cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }
