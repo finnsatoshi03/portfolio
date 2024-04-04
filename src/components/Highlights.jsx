@@ -22,7 +22,13 @@ function Highlights({ title, pos }) {
       <div
         className={`${base} inverted-border-radius-button flex items-center justify-center`}
         onMouseEnter={() =>
-          handleMouseEnter(title === "Eye Artistry*" ? "bottom-14" : "top-14")
+          handleMouseEnter(
+            title === "Eye Artistry*"
+              ? isMobile
+                ? "bottom-14"
+                : "top-14"
+              : "top-14",
+          )
         }
       >
         <p className="text-xs md:text-sm">{title}</p>
@@ -32,7 +38,9 @@ function Highlights({ title, pos }) {
         onMouseEnter={() =>
           handleMouseEnter(
             title === "Eye Artistry*"
-              ? "sm:-right-6 sm:top-14 bottom-14 -right-6"
+              ? !isMobile
+                ? "top-14"
+                : "bottom-14"
               : "-right-6 top-14",
           )
         }

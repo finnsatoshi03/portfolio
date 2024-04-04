@@ -44,6 +44,10 @@
     top: 43%;
   }
 }
+/* .project-title {
+  font-size: clamp(2rem, 4vw + 2rem, 6.5rem);
+  line-height: clamp(2rem, 4vw + 2rem, 5rem);
+} */
 /* .rounded * {
   border: 1px solid red;
 } */

@@ -1,8 +1,6 @@
 function TechStack({ techs }) {
   return (
-    <div className="rounded-full bg-white px-3 py-1.5 text-sm font-medium tracking-wide">
-      {techs}
-    </div>
+    <div className="rounded-full bg-white px-2.5 py-1 text-sm">{techs}</div>
   );
 }
 
