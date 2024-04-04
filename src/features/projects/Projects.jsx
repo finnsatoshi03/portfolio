@@ -1,12 +1,9 @@
-import useVisibilityChange from "../../hooks/useVisibilityChange";
 import ProjectsHeader from "./ProjectsHeader";
 import ProjectsDetail from "./ProjectsDetail";
 import ProjectDescription from "./ProjectDescription";
 import Scroller from "./Scroller";
 
 function Projects() {
-  useVisibilityChange();
-
   return (
     <div className="grid h-full grid-cols-[1fr_0.3fr] gap-3">
       {/* project */}
