@@ -5,7 +5,7 @@
   animation-play-state: paused;
 }
 @keyframes slideLeft {
-  0% {
+  to {
     transform: translateX(0);
   }
   100% {
@@ -47,5 +47,21 @@
   }
   to {
     transform: rotate(0deg);
+  }
+}
+
+/* projects */
+.projects-container {
+  overflow: hidden;
+}
+.projects-container:hover .inner-scroller {
+  animation-play-state: paused !important;
+}
+.projects-container .inner-scroller {
+  animation: scroll 25s linear infinite;
+}
+@keyframes scroll {
+  to {
+    transform: translateY(calc(-50% - 0.5rem));
   }
 }
