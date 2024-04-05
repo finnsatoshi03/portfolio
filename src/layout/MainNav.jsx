@@ -7,7 +7,7 @@ import useVisibilityChange from "../hooks/useVisibilityChange";
 
 import Icons from "../assets/icons";
 
-function MainNav({ sidebar, setSidebar }) {
+function MainNav({ sidebar, setSidebar = () => {} }) {
   const sidebarRef = useRef(null);
 
   useOutsideClick(sidebarRef, () => setSidebar(false));

@@ -3,7 +3,7 @@ import ProjectsDetail from "./ProjectsDetail";
 import ProjectDescription from "./ProjectDescription";
 import Scroller from "./Scroller";
 import useMobileView from "../../hooks/useMobileView";
-import TechStack from "./TechStack";
+import LogoStack from "./LogoStack";
 
 function Projects() {
   const techStacks = ["Tech1", "Tech2", "Tech3", "Tech4", "Tech5"];
@@ -29,22 +29,7 @@ function Projects() {
         {/* bottom left - Project Details */}
         <ProjectsDetail techStacks={techStacks} />
         {/* bottom right - techStacjs */}
-        {isMobile && (
-          <div className="absolute bottom-4 right-4">
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="absolute bottom-4 right-0 size-8 rounded-full"
-                style={{
-                  bottom: `${index * 20}px`,
-                  zIndex: logos.length - index,
-                }}
-              >
-                <TechStack logo={logo} />
-              </div>
-            ))}
-          </div>
-        )}
+        {isMobile && <LogoStack logos={logos} position="right-4 bottom-16" />}
         {/* inside left - description */}
         <ProjectDescription />
       </div>

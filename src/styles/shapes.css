@@ -165,11 +165,13 @@
   left: 16px;
   bottom: 36px;
   /* border-top-right-radius: 2.5rem; */
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
 }
 
 .archives-container:hover .archives::before {
   left: 28px;
   bottom: 47px;
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
 }
 
 .archives::after {
