@@ -51,18 +51,27 @@
 }
 
 /* projects */
-.projects-container {
-  overflow: hidden;
-}
 .projects-container:hover .inner-scroller {
   animation-play-state: paused !important;
 }
 .projects-container .inner-scroller {
   /* transition: transform 0.5s ease-out; */
-  /* animation: scroll 5s linear infinite; */
+  animation: scrollY 15s linear infinite;
 }
-@keyframes scroll {
+@keyframes scrollY {
   to {
     transform: translateY(calc(-50% + 0.7rem));
+  }
+}
+@keyframes scrollX {
+  to {
+    transform: translateX(calc(-50% + 0.7rem));
+  }
+}
+@media (max-width: 1280px) {
+  .projects-container .inner-scroller {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation-name: scrollX;
   }
 }

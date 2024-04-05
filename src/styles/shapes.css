@@ -120,7 +120,6 @@
   height: 80px;
   width: 17px;
   border-top-left-radius: 2rem;
-  /* box-shadow: 0 -2.5rem 0 0 blue; */
 }
 
 .title-h1-p1::before,
@@ -144,9 +143,9 @@
   }
   .title-tag::before {
     right: -23px;
-    top: 7.2px;
+    top: 8.5px;
     height: 34px;
-    width: 15px;
+    width: 14px;
     border-top-left-radius: 1rem;
     box-shadow: 0 -1rem 0 0 white;
   }

@@ -1,6 +1,6 @@
 function Archives() {
   return (
-    <div className="archives-container group relative h-[20vh] w-full transition-all duration-300 ease-in-out hover:h-[35vh] hover:cursor-pointer">
+    <div className="archives-container group relative h-[15vh] w-[30vw] transition-all duration-300 ease-in-out hover:w-[40vw] hover:cursor-pointer xl:h-[20vh] xl:w-full xl:hover:h-[35vh] xl:hover:w-full">
       <img
         src="https://placehold.co/600x400"
         alt=""

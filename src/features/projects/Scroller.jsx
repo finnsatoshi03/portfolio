@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import useVisibilityChange from "../../hooks/useVisibilityChange";
 import Archives from "./Archives";
 
@@ -6,7 +6,28 @@ function Scroller() {
   useVisibilityChange();
   const [isHovered, setIsHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isHorizontal, setIsHorizontal] = useState(window.innerWidth < 1280);
   const projects = [1, 2, 3, 4].map((_, index) => <Archives key={index} />);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsHorizontal(window.innerWidth < 1280);
+    };
+
+    const handleWheel = (e) => {
+      if (containerRef.current && containerRef.current.contains(e.target)) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -32,6 +53,8 @@ function Scroller() {
   };
 
   const handleWheel = (e) => {
+    e.preventDefault();
+
     setScrollPosition((prev) => {
       const newScrollPosition = prev - e.deltaY;
       // Limit scroll position to 1000px when scrolling up and -1000px when scrolling down
@@ -46,22 +69,25 @@ function Scroller() {
   };
 
   return (
-    <div className="flex h-full flex-col gap-3 overflow-hidden">
+    <div className="full flex h-full w-full flex-col gap-3">
       <h1 className="rounded-full border border-black py-2 text-center">
         Project Archives
       </h1>
       <div
-        className="projects-container max-h-full"
+        ref={containerRef}
+        className="projects-container max-w-[85vw] overflow-hidden sm:max-w-[92vw] xl:w-full"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onWheel={handleWheel}
       >
         <div
-          className="inner-scroller flex flex-col gap-3"
+          className="inner-scroller flex flex-wrap gap-3 xl:flex-col"
           style={{
             paddingBlock: "1em",
             animationPlayState: isHovered ? "paused" : "running",
-            transform: `translateY(${scrollPosition}px)`,
+            transform: isHorizontal
+              ? `translateX(${scrollPosition}px)`
+              : `translateY(${scrollPosition}px)`,
           }}
         >
           {projects}
