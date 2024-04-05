@@ -6,7 +6,7 @@ function useVisibilityChange(sidebar) {
 
     const handleVisibilityChange = () => {
       const elements = document.querySelectorAll(
-        ".spin, .spin-reverse, .animate-slide-toRight, .animate-slide-toLeft",
+        ".spin, .spin-reverse, .animate-slide-toRight, .animate-slide-toLeft, .projects-container .inner-scroller",
       );
       if (!isWindowActive || sidebar) {
         // console.log("Window is not active or sidebar is active");

@@ -27,9 +27,11 @@ const iconPaths = {
     "https://img.icons8.com/fluency-systems-regular/300/FFFFFF/contacts.png",
   contactActive:
     "https://img.icons8.com/fluency-systems-filled/300/FFFFFF/contacts.png",
+  arrow:
+    "https://img.icons8.com/material-rounded/300/FFFFFF/arrow-pointing-left.png",
 };
 
-function Icons({ name, activeIcon, isActive, size, fill }) {
+function Icons({ name, activeIcon, isActive, size, fill, className }) {
   const iconName = isActive && activeIcon ? activeIcon : name;
   const path = iconPaths[iconName];
 
@@ -38,7 +40,7 @@ function Icons({ name, activeIcon, isActive, size, fill }) {
 
   if (!isValidSVGPath) {
     // console.error(`Icon "${iconName}" does not exist.`);
-    return <img width={size} src={path} alt={iconName} />;
+    return <img width={size} src={path} alt={iconName} className={className} />;
   }
 
   return (

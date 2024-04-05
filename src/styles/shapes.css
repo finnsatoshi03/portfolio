@@ -1,57 +1,60 @@
-.inverted-border-radius::before {
+.inverted-border-radius::before,
+.inverted-border-radius::after,
+.inverted-border-radius-button::before,
+.inverted-border-radius-button::after,
+.project-logo-inverted-border-top-right::before,
+.project-logo-inverted-border-top-right::after,
+.project-title-container-inverted-border-bottom-left::before,
+.title-container::before,
+.title-tag::before,
+.title-h1-p1::before,
+.title-h1-p2::before,
+.archives::before,
+.archives::after {
   content: "";
   position: absolute;
-
-  /* background-color: #0074d9; */
-  rotate: 180deg;
-  left: -25px;
-  top: 1px;
-  height: 50px;
-  width: 25px;
-  border-top-left-radius: 24px;
-  box-shadow: 0 -25px 0 0 white; /* This is where the magic happens! */
 }
 
+.inverted-border-radius::before,
 .inverted-border-radius::after {
-  content: "";
-  position: absolute;
-
-  /* background-color: #0074d9; */
   rotate: 180deg;
-  right: 0;
-  top: -97%;
   height: 50px;
   width: 25px;
   border-top-left-radius: 24px;
   box-shadow: 0 -25px 0 0 white;
 }
 
-.inverted-border-radius-button::before {
-  content: "";
-  position: absolute;
+.inverted-border-radius::before {
+  left: -25px;
+  top: 1px;
+}
 
-  /* background-color: #0074d9; */
-  rotate: 180deg;
+.inverted-border-radius::after {
+  right: 0;
+  top: -97%;
+}
+
+.inverted-border-radius-button::before,
+.inverted-border-radius-button::after {
   right: 40px;
-  top: 0px;
   height: 15px;
   width: 25px;
   border-radius: 10px 10px 0 0;
   box-shadow: 0 -10px 0 0 white;
 }
-.inverted-border-radius-button::after {
-  content: "";
-  position: absolute;
 
-  /* background-color: #0074d9; */
+.inverted-border-radius-button::before {
+  rotate: 180deg;
+  top: 0px;
+}
+
+.inverted-border-radius-button::after {
   rotate: 0;
-  right: 40px;
   top: 25px;
   height: 10px;
-  width: 25px;
-  border-radius: 10px 10px 0 0;
   box-shadow: 0 -5px 0 0 white;
 }
+
 @media (max-width: 700px) {
   .inverted-border-radius-button::before {
     top: -4px;
@@ -61,4 +64,123 @@
     top: 21px;
     right: 36px;
   }
+}
+
+.project-logo-inverted-border-top-right::before,
+.project-logo-inverted-border-top-right::after {
+  rotate: 0deg;
+  height: 80px;
+  width: 50px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.project-logo-inverted-border-top-right::before {
+  right: -47px;
+  top: 0px;
+}
+
+.project-logo-inverted-border-top-right::after {
+  left: 0;
+  top: 100%;
+}
+
+.project-title-container-inverted-border-bottom-left::before {
+  rotate: -90deg;
+  left: 15px;
+  top: -64px;
+  height: 80px;
+  width: 50px;
+  z-index: 10;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.title-container::before,
+.title-tag::before,
+.title-h1-p1::before,
+.title-h1-p2::before {
+  height: 80px;
+  width: 50px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+}
+
+.title-container::before {
+  rotate: -90deg;
+  left: 15px;
+  top: -65px;
+  z-index: 10;
+}
+
+.title-tag::before {
+  transform: rotate(-90deg);
+  right: -49px;
+  top: -8px;
+  height: 80px;
+  width: 17px;
+  border-top-left-radius: 2rem;
+}
+
+.title-h1-p1::before,
+.title-h1-p2::before {
+  transform: rotate(-90deg);
+  right: -64.5px;
+  bottom: -20px;
+  height: 85px;
+  width: 45px;
+}
+
+@media (max-width: 769px) {
+  .title-h1-p2::before,
+  .title-h1-p1::before {
+    right: -40px;
+    bottom: -10px;
+    height: 50px;
+    width: 30px;
+    border-top-left-radius: 1.5rem;
+    box-shadow: 0 -1.5rem 0 0 white;
+  }
+  .title-tag::before {
+    right: -23px;
+    top: 8.5px;
+    height: 34px;
+    width: 14px;
+    border-top-left-radius: 1rem;
+    box-shadow: 0 -1rem 0 0 white;
+  }
+}
+
+.archives::before,
+.archives::after {
+  rotate: -180deg;
+  height: 80px;
+  width: 20px;
+  border-top-left-radius: 2.5rem;
+  box-shadow: 0 -2.5rem 0 0 white;
+  transition: all 0.3s ease-in-out;
+}
+
+.archives::before {
+  left: 16px;
+  bottom: 36px;
+  /* border-top-right-radius: 2.5rem; */
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
+}
+
+.archives-container:hover .archives::before {
+  left: 28px;
+  bottom: 47px;
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
+}
+
+.archives::after {
+  /* background-color: aqua; */
+  rotate: 90deg;
+  left: -49px;
+  bottom: -30px;
+  height: 78px;
+  width: 20px;
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
+  border-radius: 0 2.5rem;
 }
