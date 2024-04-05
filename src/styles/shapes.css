@@ -115,11 +115,12 @@
 
 .title-tag::before {
   transform: rotate(-90deg);
-  right: -49.55px;
-  top: -10px;
+  right: -49px;
+  top: -8px;
   height: 80px;
-  width: 19px;
+  width: 17px;
   border-top-left-radius: 2rem;
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
 }
 
 .title-h1-p1::before,
@@ -164,6 +165,7 @@
 .archives::before {
   left: 16px;
   bottom: 36px;
+  /* border-top-right-radius: 2.5rem; */
 }
 
 .archives-container:hover .archives::before {
@@ -172,10 +174,12 @@
 }
 
 .archives::after {
+  /* background-color: aqua; */
   rotate: 90deg;
   left: -49px;
   bottom: -30px;
-  height: 78.5px;
-  width: 19px;
-  border-top-right-radius: 2.5rem;
+  height: 78px;
+  width: 20px;
+  /* box-shadow: 0 -2.5rem 0 0 blue; */
+  border-radius: 0 2.5rem;
 }
