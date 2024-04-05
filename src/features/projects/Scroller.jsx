@@ -7,8 +7,9 @@ function Scroller() {
   const [isHovered, setIsHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isHorizontal, setIsHorizontal] = useState(window.innerWidth < 1280);
-  const projects = [1, 2, 3, 4].map((_, index) => <Archives key={index} />);
   const containerRef = useRef(null);
+
+  const projects = [1, 2, 3, 4].map((_, index) => <Archives key={index} />);
 
   useEffect(() => {
     const handleResize = () => {

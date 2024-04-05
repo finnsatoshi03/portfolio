@@ -1,15 +1,11 @@
 import { useState } from "react";
 import useMobileView from "../../hooks/useMobileView";
 import Icons from "../../assets/icons";
-import TechStack from "./TechStack";
+import LogoStack from "./LogoStack";
 
 function Archives() {
   const isMobile = useMobileView();
   const [isHovered, setIsHovered] = useState(false);
-  const logos = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png",
-  ];
 
   const transition = "transition-all duration-300 ease-in-out";
   const text =
@@ -35,6 +31,12 @@ function Archives() {
           Title
         </h1>
       </div>
+
+      <LogoStack
+        position="top-4 right-4"
+        isHovered={isHovered}
+        reverse={true}
+      />
 
       {!isMobile && (
         <div

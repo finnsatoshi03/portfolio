@@ -56,7 +56,7 @@
 }
 .projects-container .inner-scroller {
   /* transition: transform 0.5s ease-out; */
-  /* animation: scrollY 15s linear infinite; */
+  animation: scrollY 15s linear infinite;
 }
 @keyframes scrollY {
   to {
