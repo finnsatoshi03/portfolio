@@ -24,15 +24,23 @@ function TitleContainer({ title, techStacks }) {
     return [firstPart.trim(), secondPart.trim()];
   };
 
-  const [firstPart, secondPart] = splitTitle(title);
+  const projectName = isMobile ? title.split(" ")[0] : title;
+
+  const [firstPart, secondPart] = splitTitle(projectName);
+
+  console.log(techStacks);
 
   return (
     <>
-      <div className="title-h1-p1 relative w-fit rounded-tr-[1.5rem] bg-white px-6 pt-2 text-black sm:rounded-tr-[2.5rem]">
-        <Title text={firstPart} />
-      </div>
+      {firstPart && (
+        <div className="title-h1-p1 relative w-fit rounded-tr-[1.5rem] bg-white px-6 pt-2 text-black sm:rounded-tr-[2.5rem]">
+          <Title text={firstPart} />
+        </div>
+      )}
       {secondPart && (
-        <div className="title-h1-p2 relative w-fit rounded-tr-[1.5rem] bg-white px-6 text-black sm:rounded-tr-[2.5rem]">
+        <div
+          className={`title-h1-p2 ${firstPart ? "" : "pt-2"} relative w-fit rounded-tr-[1.5rem] bg-white px-6 text-black sm:rounded-tr-[2.5rem]`}
+        >
           <Title text={secondPart} />
           {!isMobile && (
             <div className="absolute -right-[11rem] bottom-6 flex w-[150px] flex-wrap-reverse gap-2 md:-right-[17rem] md:w-[250px]">

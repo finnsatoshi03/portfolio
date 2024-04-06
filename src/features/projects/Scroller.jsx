@@ -2,14 +2,20 @@ import { useState, useEffect, useRef } from "react";
 import useVisibilityChange from "../../hooks/useVisibilityChange";
 import Archives from "./Archives";
 
-function Scroller() {
+function Scroller({ onProjectSelect, projects }) {
   useVisibilityChange();
   const [isHovered, setIsHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isHorizontal, setIsHorizontal] = useState(window.innerWidth < 1280);
   const containerRef = useRef(null);
 
-  const projects = [1, 2, 3, 4].map((_, index) => <Archives key={index} />);
+  const projectComponents = projects.map((project, index) => (
+    <Archives
+      key={index}
+      project={project}
+      onSelect={() => onProjectSelect(index)}
+    />
+  ));
 
   useEffect(() => {
     const handleResize = () => {
@@ -91,8 +97,8 @@ function Scroller() {
               : `translateY(${scrollPosition}px)`,
           }}
         >
-          {projects}
-          {projects}
+          {projectComponents}
+          {projectComponents}
         </div>
       </div>
     </div>

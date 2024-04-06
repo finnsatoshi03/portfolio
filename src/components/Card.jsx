@@ -11,6 +11,7 @@ function Card({
   icon,
   onMouseEnter,
   onMouseLeave,
+  url,
 }) {
   const base = `${pos} absolute inline-flex items-center rounded-3xl xl:rounded-[2rem]`;
 
@@ -37,6 +38,7 @@ function Card({
         </h2>
         <Button
           type={type === "secondary" ? "" : "small"}
+          to={url}
           className="absolute bottom-4 right-4 rounded-full bg-white p-1 hover:bg-green-300"
         >
           {!icon ? buttonText : icon}

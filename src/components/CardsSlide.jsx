@@ -1,12 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useCallback, useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
-
-const cards = [
-  { title: "Project 1" },
-  { title: "Project 2" },
-  { title: "Project 3" },
-];
 
 const icons = {
   arrow: (
@@ -27,7 +22,12 @@ const icons = {
   ),
 };
 
-function CardsSlide() {
+function CardsSlide({ projects }) {
+  const sortedProjects = [...projects].sort(
+    (a, b) => new Date(b.updated_at) - new Date(a.updated_at),
+  );
+  sortedProjects.shift();
+  // console.log(sortedProjects);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const slideInterval = useRef(null);
@@ -35,10 +35,10 @@ function CardsSlide() {
   const startSlide = useCallback(() => {
     if (!isHovered) {
       slideInterval.current = setInterval(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % cards.length);
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % sortedProjects.length);
       }, 3000); // Change slide every 3 seconds
     }
-  }, [isHovered, cards.length]);
+  }, [isHovered, sortedProjects.length]);
 
   const stopSlide = useCallback(() => {
     clearInterval(slideInterval.current);
@@ -56,11 +56,15 @@ function CardsSlide() {
 
   return (
     <>
-      {cards.map((card, index) => {
+      {sortedProjects.map((project, index) => {
         const isCurrentSlide = index === currentSlide;
-        const isNextSlide = index === (currentSlide + 1) % cards.length;
+        const isNextSlide =
+          index === (currentSlide + 1) % sortedProjects.length;
         const isPreviousSlide =
-          index === (currentSlide - 1 + cards.length) % cards.length;
+          index ===
+          (currentSlide - 1 + sortedProjects.length) % sortedProjects.length;
+        const isHiddenSlide =
+          index > (currentSlide + 1) % sortedProjects.length;
 
         let pos, zIndex;
         const transition = "transition-all duration-300 ease-in-out";
@@ -73,16 +77,20 @@ function CardsSlide() {
         } else if (isPreviousSlide) {
           pos = "bottom-[3rem] scale-75 left-[1rem] opacity-50";
           zIndex = "z-30";
-        } else {
+        } else if (isHiddenSlide) {
           pos = "bottom-[4rem] scale-50 left-[1rem] opacity-0";
           zIndex = "z-20";
+        } else {
+          pos = "bottom-[4rem] scale-50 left-[1rem] opacity-0";
+          zIndex = "z-10";
         }
 
         return (
           <Card
             key={index}
             inProfile={true}
-            title={card.title}
+            title={project.name}
+            url={project.url}
             type="secondary"
             icon={icons.view}
             pos={`${pos} ${zIndex} ${transition}`}
@@ -111,14 +119,19 @@ function CardsSlide() {
         <Button
           className={base}
           onClick={() =>
-            setCurrentSlide((currentSlide - 1 + cards.length) % cards.length)
+            setCurrentSlide(
+              (currentSlide - 1 + sortedProjects.length) %
+                sortedProjects.length,
+            )
           }
         >
           {icons.arrow}
         </Button>
         <Button
           className={`${base} rotate-180`}
-          onClick={() => setCurrentSlide((currentSlide + 1) % cards.length)}
+          onClick={() =>
+            setCurrentSlide((currentSlide + 1) % sortedProjects.length)
+          }
         >
           {icons.arrow}
         </Button>

@@ -4,10 +4,37 @@ import ProjectDescription from "./ProjectDescription";
 import Scroller from "./Scroller";
 import useMobileView from "../../hooks/useMobileView";
 import LogoStack from "./LogoStack";
+import { useEffect, useState } from "react";
+import { useProjects } from "../../contexts/ProjectContext";
+import { useLatestProject } from "../../hooks/useLatestProject";
 
 function Projects() {
-  const techStacks = ["Tech1", "Tech2", "Tech3", "Tech4", "Tech5"];
   const isMobile = useMobileView();
+  const { projects } = useProjects();
+
+  const [selectedProject, setSelectedProject] = useState(null);
+  const latestProject = useLatestProject(projects);
+  const projectToDisplay = selectedProject || latestProject;
+
+  const techStacksMapping = {
+    d3xtra: ["Vite", "React", "Electron", "Tailwind"],
+    portfolio: ["Vite", "React", "Tailwind"],
+    "productivity app": ["Expo", "React Native"],
+    spotify: ["HTML", "CSS", "JS"],
+    "recipe website": ["Vite", "React", "Tailwind"],
+  };
+
+  const title = projectToDisplay ? projectToDisplay.name : "Sample Long Long";
+  const collaborators = projectToDisplay ? projectToDisplay.collaborators : [];
+  const techStacks = projectToDisplay
+    ? techStacksMapping[projectToDisplay.name.trim().toLowerCase()] || [
+        projectToDisplay.techStack,
+      ]
+    : ["Tech1", "Tech2", "Tech3", "Tech4", "Tech5"];
+
+  const handleProjectSelect = (index) => {
+    setSelectedProject(projects[index]);
+  };
 
   return (
     <div className="grid h-full min-w-0 grid-rows-[1fr_0.4fr] gap-10 xl:grid-cols-[1fr_0.3fr] xl:grid-rows-1 xl:gap-3">
@@ -19,15 +46,13 @@ function Projects() {
           className="left-6 h-full w-full rounded-[2.5rem] object-cover"
         />
 
-        <ProjectsHeader />
-        <ProjectsDetail techStacks={techStacks} />
-        {isMobile && (
-          <LogoStack position="right-4 bottom-[4.5rem]" className="" />
-        )}
+        <ProjectsHeader collaborators={collaborators} />
+        <ProjectsDetail techStacks={techStacks} title={title} />
+        {isMobile && <LogoStack position="right-4 bottom-[4.5rem]" />}
         <ProjectDescription />
       </div>
 
-      <Scroller />
+      <Scroller onProjectSelect={handleProjectSelect} projects={projects} />
     </div>
   );
 }
