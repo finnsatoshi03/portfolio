@@ -25,9 +25,9 @@ function Archives() {
       />
 
       <div
-        className={`${transition} absolute left-3 ${isHovered ? "top-2" : "top-2/3 lg:top-[65%] xl:top-[75%]"}`}
+        className={`${transition} absolute left-3 ${isHovered ? "top-2" : "top-2/3 lg:top-[65%] xl:top-[70%]"}`}
       >
-        <h1 className="w-3/4 px-2 py-1 font-montserrat text-2xl font-bold">
+        <h1 className="w-3/4 px-2 py-1 font-montserrat text-lg font-bold md:text-xl xl:text-2xl">
           Title
         </h1>
       </div>
@@ -40,7 +40,7 @@ function Archives() {
 
       {!isMobile && (
         <div
-          className={`${transition} absolute left-3  ${isHovered ? "bottom-2" : "bottom-1/3 md:bottom-1/2 lg:bottom-[60%] xl:bottom-2/3"}  text-xs leading-4`}
+          className={`${transition} absolute left-3  ${isHovered ? "bottom-2" : "bottom-1/3 md:bottom-1/2 xl:bottom-[60%]"}  text-xs leading-4`}
         >
           <p
             className="w-3/4 px-2 py-1"
