@@ -1,4 +1,4 @@
-import { techStacksImageMapping, techStacksMapping } from "../../utils/helpers";
+import { techStacksImageMapping, techStacksMapping } from "../../data/projects";
 import TechStack from "./TechStack";
 
 function LogoStack({ isHovered, position, reverse, techStacks, parentStyle }) {

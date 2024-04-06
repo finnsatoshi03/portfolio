@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Octokit } from "@octokit/core";
 import { createContext, useContext, useEffect, useReducer } from "react";
 

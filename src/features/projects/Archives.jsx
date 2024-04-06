@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
 import { memo, useState } from "react";
+import {
+  techStacksDescriptionMapping,
+  techStacksMapping,
+} from "../../data/projects";
+
 import useMobileView from "../../hooks/useMobileView";
 import Icons from "../../assets/icons";
 import LogoStack from "./LogoStack";
@@ -9,9 +14,10 @@ function Archives({ onSelect, project }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const transition = "transition-all duration-300 ease-in-out";
-  const text =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta qui doloribus et reiciendis";
-  const limitedText = text.split(" ").slice(0, 10).join(" ") + "...";
+  const description =
+    techStacksDescriptionMapping[project.name.trim().toLowerCase()] || "";
+  const techStacks = techStacksMapping[project.name.trim().toLowerCase()] || [];
+  const limitedText = description.split(" ").slice(0, 7).join(" ") + "...";
 
   const projectName = isMobile ? project.name.split(" ")[0] : project.name;
 
@@ -40,11 +46,12 @@ function Archives({ onSelect, project }) {
         position="top-4 right-4"
         isHovered={isHovered}
         reverse={true}
+        techStacks={techStacks}
       />
 
       {!isMobile && (
         <div
-          className={`${transition} absolute left-3  ${isHovered ? "bottom-2" : "bottom-1/3 md:bottom-1/2 xl:bottom-[60%]"}  text-xs leading-4`}
+          className={`${transition} absolute left-3  ${isHovered ? "bottom-2" : "bottom-[55%] xl:bottom-[65%]"}  text-xs leading-4`}
         >
           <p
             className="w-3/4 px-2 py-1"

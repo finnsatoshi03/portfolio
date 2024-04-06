@@ -1,24 +1,32 @@
+import { useState } from "react";
+import { useProjects } from "../../contexts/ProjectContext";
+import { useLatestProject } from "../../hooks/useLatestProject";
+import {
+  techStacksDescriptionMapping,
+  techStacksMapping,
+} from "../../data/projects";
+
 import ProjectsHeader from "./ProjectsHeader";
 import ProjectsDetail from "./ProjectsDetail";
 import ProjectDescription from "./ProjectDescription";
 import Scroller from "./Scroller";
 import useMobileView from "../../hooks/useMobileView";
 import LogoStack from "./LogoStack";
-import { useEffect, useState } from "react";
-import { useProjects } from "../../contexts/ProjectContext";
-import { useLatestProject } from "../../hooks/useLatestProject";
-import { techStacksMapping } from "../../utils/helpers";
 
 function Projects() {
   const isMobile = useMobileView();
   const { projects } = useProjects();
 
   const [selectedProject, setSelectedProject] = useState(null);
-  // console.log(selectedProject);
   const latestProject = useLatestProject(projects);
   const projectToDisplay = selectedProject || latestProject;
 
   const title = projectToDisplay ? projectToDisplay.name : "Sample Long Long";
+  const description = projectToDisplay
+    ? techStacksDescriptionMapping[
+        projectToDisplay.name.trim().toLowerCase()
+      ] || ""
+    : "";
   const collaborators = projectToDisplay ? projectToDisplay.collaborators : [];
   const techStacks = projectToDisplay
     ? techStacksMapping[projectToDisplay.name.trim().toLowerCase()] || [
@@ -51,7 +59,7 @@ function Projects() {
             techStacks={techStacks}
           />
         )}
-        <ProjectDescription />
+        <ProjectDescription description={description} />
       </div>
 
       <Scroller onProjectSelect={handleProjectSelect} projects={projects} />
