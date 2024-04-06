@@ -7,22 +7,16 @@ import LogoStack from "./LogoStack";
 import { useEffect, useState } from "react";
 import { useProjects } from "../../contexts/ProjectContext";
 import { useLatestProject } from "../../hooks/useLatestProject";
+import { techStacksMapping } from "../../utils/helpers";
 
 function Projects() {
   const isMobile = useMobileView();
   const { projects } = useProjects();
 
   const [selectedProject, setSelectedProject] = useState(null);
+  // console.log(selectedProject);
   const latestProject = useLatestProject(projects);
   const projectToDisplay = selectedProject || latestProject;
-
-  const techStacksMapping = {
-    d3xtra: ["Vite", "React", "Electron", "Tailwind"],
-    portfolio: ["Vite", "React", "Tailwind"],
-    "productivity app": ["Expo", "React Native"],
-    spotify: ["HTML", "CSS", "JS"],
-    "recipe website": ["Vite", "React", "Tailwind"],
-  };
 
   const title = projectToDisplay ? projectToDisplay.name : "Sample Long Long";
   const collaborators = projectToDisplay ? projectToDisplay.collaborators : [];
@@ -48,7 +42,15 @@ function Projects() {
 
         <ProjectsHeader collaborators={collaborators} />
         <ProjectsDetail techStacks={techStacks} title={title} />
-        {isMobile && <LogoStack position="right-4 bottom-[4.5rem]" />}
+        {isMobile && (
+          <LogoStack
+            parentStyle={{
+              right: "1rem",
+              bottom: `${4.5 + techStacks.length * 0.5}rem`,
+            }}
+            techStacks={techStacks}
+          />
+        )}
         <ProjectDescription />
       </div>
 

@@ -28,8 +28,6 @@ function TitleContainer({ title, techStacks }) {
 
   const [firstPart, secondPart] = splitTitle(projectName);
 
-  console.log(techStacks);
-
   return (
     <>
       {firstPart && (
