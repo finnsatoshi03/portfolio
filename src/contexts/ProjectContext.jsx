@@ -36,16 +36,16 @@ function ProjectProvider({ children }) {
       dispatch({ type: "loading" });
 
       const isProduction = import.meta.env.MODE === "production";
-      console.log(import.meta.env.MODE);
+      // console.log(import.meta.env.MODE);
 
       const GITHUB_API_TOKEN = isProduction
         ? import.meta.env.VERCEL_REACT_APP_GITHUB_API_TOKEN
         : import.meta.env.VITE_REACT_APP_GITHUB_API_TOKEN;
 
-      console.log(GITHUB_API_TOKEN);
+      // console.log(GITHUB_API_TOKEN);
 
       const octokit = new Octokit({
-        auth: GITHUB_API_TOKEN,
+        auth: `token ${GITHUB_API_TOKEN}`,
       });
       const res = await octokit.request("GET /user/repos");
 
