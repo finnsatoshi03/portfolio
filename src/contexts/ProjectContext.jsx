@@ -45,7 +45,7 @@ function ProjectProvider({ children }) {
       // console.log(GITHUB_API_TOKEN);
 
       const octokit = new Octokit({
-        auth: `token ${GITHUB_API_TOKEN}`,
+        auth: GITHUB_API_TOKEN,
       });
       const res = await octokit.request("GET /user/repos");
 
