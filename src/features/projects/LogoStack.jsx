@@ -1,14 +1,16 @@
+/* eslint-disable react/prop-types */
+import { techStacksImageMapping } from "../../data/projects";
 import TechStack from "./TechStack";
 
-function LogoStack({ isHovered, position, reverse }) {
-  const logos = [
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png",
-  ];
+function LogoStack({ isHovered, position, reverse, techStacks, parentStyle }) {
+  const logos = techStacks
+    ? techStacks.map((tech) => techStacksImageMapping[tech])
+    : [];
+  // console.log(techStacks);
   const orderedLogos = reverse ? [...logos]?.reverse() : logos;
 
   return (
-    <div className={`absolute ${position}`}>
+    <div className={`absolute ${position}`} style={parentStyle}>
       {orderedLogos?.map((logo, index) => (
         <div
           key={index}

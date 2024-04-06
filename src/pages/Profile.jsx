@@ -3,6 +3,7 @@ import Highlight from "../components/Highlights";
 import Card from "../components/Card";
 import CardsSlide from "../components/CardsSlide";
 import useMobileView from "../hooks/useMobileView";
+import { useProjects } from "../contexts/ProjectContext";
 
 const highlights = [
   { title: "Clean Code*", pos: "pos-1" },
@@ -12,6 +13,15 @@ const highlights = [
 
 function Profile() {
   const isMobile = useMobileView();
+  const { projects } = useProjects();
+
+  const latestProject = projects.reduce((latest, project) => {
+    return new Date(project.updated_at) > new Date(latest.updated_at)
+      ? project
+      : latest;
+  }, projects[0]);
+
+  // console.log(latestProject);
 
   return (
     <div
@@ -28,7 +38,8 @@ function Profile() {
       <Card
         inProfile={true}
         label="Recent Project"
-        title="Recent Project Title"
+        title={latestProject?.name}
+        url={latestProject?.url}
         buttonText="View"
         pos="topRight"
         type="primary"
@@ -37,7 +48,7 @@ function Profile() {
         <Highlight key={index} title={highlight.title} pos={highlight.pos} />
       ))}
       <Socials />
-      <CardsSlide />
+      <CardsSlide projects={projects} />
     </div>
   );
 }

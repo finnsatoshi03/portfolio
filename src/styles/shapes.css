@@ -117,9 +117,10 @@
   transform: rotate(-90deg);
   right: -49px;
   top: -8px;
-  height: 80px;
+  height: 79px;
   width: 17px;
   border-top-left-radius: 2rem;
+  /* box-shadow: 0 -2.5rem 0 0 red; */
 }
 
 .title-h1-p1::before,
