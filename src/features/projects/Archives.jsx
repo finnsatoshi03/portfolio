@@ -14,6 +14,7 @@ function Archives({ onSelect, project }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const transition = "transition-all duration-300 ease-in-out";
+
   const description =
     techStacksDescriptionMapping[project.name.trim().toLowerCase()] || "";
   const techStacks = techStacksMapping[project.name.trim().toLowerCase()] || [];

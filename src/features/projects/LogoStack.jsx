@@ -1,4 +1,5 @@
-import { techStacksImageMapping, techStacksMapping } from "../../data/projects";
+/* eslint-disable react/prop-types */
+import { techStacksImageMapping } from "../../data/projects";
 import TechStack from "./TechStack";
 
 function LogoStack({ isHovered, position, reverse, techStacks, parentStyle }) {
