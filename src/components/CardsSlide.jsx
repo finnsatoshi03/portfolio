@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import Card from "./Card";
+import { projectImagesMapping } from "../data/projects";
 
 const icons = {
   arrow: (
@@ -57,6 +58,10 @@ function CardsSlide({ projects }) {
   return (
     <>
       {sortedProjects.map((project, index) => {
+        const projectImage =
+          projectImagesMapping[project.name?.trim().toLowerCase()] ||
+          "https://placehold.co/600x400";
+
         const isCurrentSlide = index === currentSlide;
         const isNextSlide =
           index === (currentSlide + 1) % sortedProjects.length;
@@ -91,6 +96,7 @@ function CardsSlide({ projects }) {
             inProfile={true}
             title={project.name}
             url={project.url}
+            image={projectImage}
             type="secondary"
             icon={icons.view}
             pos={`${pos} ${zIndex} ${transition}`}

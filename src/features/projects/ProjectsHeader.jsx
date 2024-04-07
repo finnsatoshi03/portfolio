@@ -22,7 +22,7 @@ function ProjectsHeader({ collaborators }) {
             />
             {hoveredCollaborator === collaborator.login && (
               <div
-                className="absolute -bottom-12 w-max text-xs text-black"
+                className="absolute -bottom-16 w-max rounded-md bg-black px-2 py-1 text-xs text-white"
                 style={{ left: `${index * 20}px` }}
               >
                 {collaborator.login}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useProjects } from "../../contexts/ProjectContext";
 import { useLatestProject } from "../../hooks/useLatestProject";
 import {
+  projectImagesMapping,
   techStacksDescriptionMapping,
   techStacksMapping,
 } from "../../data/projects";
@@ -22,6 +23,9 @@ function Projects() {
   const projectToDisplay = selectedProject || latestProject;
 
   const title = projectToDisplay ? projectToDisplay.name : "Sample Long Long";
+  const projectImage = projectToDisplay
+    ? projectImagesMapping[projectToDisplay.name.trim().toLowerCase()]
+    : "https://placehold.co/600x400";
   const description = projectToDisplay
     ? techStacksDescriptionMapping[
         projectToDisplay.name.trim().toLowerCase()
@@ -43,11 +47,10 @@ function Projects() {
       {/* project */}
       <div className="relative">
         <img
-          src="https://placehold.co/600x400"
+          src={projectImage}
           alt="My Profile"
           className="left-6 h-full w-full rounded-[2.5rem] object-cover"
         />
-
         <ProjectsHeader collaborators={collaborators} />
         <ProjectsDetail techStacks={techStacks} title={title} />
         {isMobile && (
@@ -59,7 +62,9 @@ function Projects() {
             techStacks={techStacks}
           />
         )}
-        <ProjectDescription description={description} />
+        <div className="project-description-container">
+          <ProjectDescription description={description} />
+        </div>
       </div>
 
       <Scroller onProjectSelect={handleProjectSelect} projects={projects} />

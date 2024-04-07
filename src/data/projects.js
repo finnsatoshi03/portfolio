@@ -10,6 +10,15 @@ export const techStacksDescriptionMapping = {
     "A website for sharing and discovering recipes built with Vite, React, and Tailwind.",
 };
 
+export const projectImagesMapping = {
+  d3xtra:
+    "https://res.cloudinary.com/dzzngly8h/image/upload/v1712481049/zbmjpttd82buuje0pklw.jpg",
+  portfolio: "https://placehold.co/600x400",
+  "productivity app": "https://placehold.co/600x400",
+  spotify: "https://placehold.co/600x400",
+  "recipe website": "https://placehold.co/600x400",
+};
+
 export const techStacksMapping = {
   d3xtra: ["Vite", "React", "Electron", "Tailwind"],
   portfolio: ["Vite", "React", "Tailwind"],
