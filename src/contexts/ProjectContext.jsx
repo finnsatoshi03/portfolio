@@ -30,23 +30,13 @@ function reducer(state, action) {
 
 function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(import.meta.env.VERCEL_REACT_APP_GITHUB_API_TOKEN);
-  console.log(import.meta.env.VITE_REACT_APP_GITHUB_API_TOKEN);
 
   useEffect(function () {
     async function fetchProjects() {
       dispatch({ type: "loading" });
 
-      const isProduction = import.meta.env.MODE === "production";
-
-      const GITHUB_API_TOKEN = isProduction
-        ? import.meta.env.VERCEL_REACT_APP_GITHUB_API_TOKEN
-        : import.meta.env.VITE_REACT_APP_GITHUB_API_TOKEN;
-
-      // console.log(GITHUB_API_TOKEN);
-
       const octokit = new Octokit({
-        auth: GITHUB_API_TOKEN,
+        auth: import.meta.env.VITE_REACT_APP_GITHUB_API_TOKEN,
       });
       const res = await octokit.request("GET /user/repos");
 
