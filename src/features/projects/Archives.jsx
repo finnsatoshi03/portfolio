@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { memo, useState } from "react";
 import {
+  projectImagesMapping,
   techStacksDescriptionMapping,
   techStacksMapping,
 } from "../../data/projects";
@@ -18,6 +19,9 @@ function Archives({ onSelect, project }) {
   const description =
     techStacksDescriptionMapping[project.name.trim().toLowerCase()] || "";
   const techStacks = techStacksMapping[project.name.trim().toLowerCase()] || [];
+  const projectImage =
+    projectImagesMapping[project.name.trim().toLowerCase()] ||
+    "https://placehold.co/600x400";
   const limitedText = description.split(" ").slice(0, 7).join(" ") + "...";
 
   const projectName = isMobile ? project.name.split(" ")[0] : project.name;
@@ -30,9 +34,9 @@ function Archives({ onSelect, project }) {
       onClick={onSelect}
     >
       <img
-        src="https://placehold.co/600x400"
+        src={projectImage}
         alt=""
-        className="h-full w-full rounded-3xl object-cover transition-all duration-300"
+        className="h-full w-full rounded-3xl object-cover opacity-50 transition-all duration-300"
       />
 
       <div
@@ -44,10 +48,11 @@ function Archives({ onSelect, project }) {
       </div>
 
       <LogoStack
-        position="top-4 right-4"
+        position="top-2 xl:top-4 right-4 xl:right-8"
         isHovered={isHovered}
         reverse={true}
         techStacks={techStacks}
+        onScroller={true}
       />
 
       {!isMobile && (
@@ -56,7 +61,11 @@ function Archives({ onSelect, project }) {
         >
           <p
             className="w-3/4 px-2 py-1"
-            style={{ mixBlendMode: "difference", color: "white" }}
+            style={{
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 255.5)",
+              // mixBlendMode: "difference",
+              color: "black",
+            }}
           >
             {limitedText}
           </p>

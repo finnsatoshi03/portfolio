@@ -11,9 +11,8 @@ function ProjectsHeader({ collaborators }) {
       {/* developers */}
       <div className="absolute -right-[170px] top-4 flex w-[150px]">
         {collaborators.slice(0, 4).map((collaborator, index) => (
-          <>
+          <div key={index}>
             <img
-              key={index}
               src={collaborator.avatar_url}
               alt={collaborator.login}
               className="absolute left-[20px] size-8 rounded-full border border-red-500"
@@ -23,13 +22,13 @@ function ProjectsHeader({ collaborators }) {
             />
             {hoveredCollaborator === collaborator.login && (
               <div
-                className="absolute -bottom-12 w-max text-xs text-black"
+                className="absolute -bottom-16 w-max rounded-md bg-black px-2 py-1 text-xs text-white"
                 style={{ left: `${index * 20}px` }}
               >
                 {collaborator.login}
               </div>
             )}
-          </>
+          </div>
         ))}
         {collaborators.length > 4 && (
           <div

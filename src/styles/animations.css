@@ -75,3 +75,12 @@
     animation-name: scrollX;
   }
 }
+
+.project-description-container {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img:hover ~ .project-description-container {
+  opacity: 1;
+}

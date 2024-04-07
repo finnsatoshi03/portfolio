@@ -12,6 +12,7 @@ function Card({
   onMouseEnter,
   onMouseLeave,
   url,
+  image,
 }) {
   const base = `${pos} absolute inline-flex items-center rounded-3xl xl:rounded-[2rem]`;
 
@@ -27,9 +28,9 @@ function Card({
       onMouseLeave={onMouseLeave}
     >
       <img
-        src="https://placehold.co/400"
+        src={image || "https://placehold.co/400"}
         alt="Recent Project"
-        className={`${type === "secondary" ? "w-[6rem] sm:w-[8rem]" : "w-[5rem]"} rounded-2xl xl:rounded-3xl`}
+        className={`${type === "secondary" ? "size-[6rem] sm:size-[8rem]" : "size-[5rem]"} rounded-2xl object-cover xl:rounded-3xl`}
       />
       <div className={type === "secondary" ? "flex flex-col py-2 pr-3" : ""}>
         <p className="text-sm">{label}</p>

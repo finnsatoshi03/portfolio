@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from "react";
 import useVisibilityChange from "../../hooks/useVisibilityChange";
 import Archives from "./Archives";
