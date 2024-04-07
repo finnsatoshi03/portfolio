@@ -4,6 +4,8 @@ import Card from "../components/Card";
 import CardsSlide from "../components/CardsSlide";
 import useMobileView from "../hooks/useMobileView";
 import { useProjects } from "../contexts/ProjectContext";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const highlights = [
   { title: "Clean Code*", pos: "pos-1" },
@@ -13,7 +15,7 @@ const highlights = [
 
 function Profile() {
   const isMobile = useMobileView();
-  const { projects } = useProjects();
+  const { projects, isLoading } = useProjects();
 
   const latestProject = projects.reduce((latest, project) => {
     return new Date(project.updated_at) > new Date(latest.updated_at)
@@ -30,11 +32,20 @@ function Profile() {
         height: isMobile ? "calc(70vh - 6rem)" : "calc(100vh - 3rem)",
       }}
     >
-      <img
-        src="/profile.jpg"
-        alt="My Profile"
-        className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-right-top"
-      />
+      {isLoading ? (
+        <div className="h-full w-[40vw]">
+          <Skeleton
+            height={"100%"}
+            className="h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem]"
+          />
+        </div>
+      ) : (
+        <img
+          src="/profile.jpg"
+          alt="My Profile"
+          className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-right-top"
+        />
+      )}
       <Card
         inProfile={true}
         label="Recent Project"
