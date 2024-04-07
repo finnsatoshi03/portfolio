@@ -31,10 +31,7 @@ function Profile() {
       }}
     >
       <img
-        src={
-          "https://res.cloudinary.com/dzzngly8h/image/upload/v1712488811/kfr1n3f8et5anxfjplqu.jpg" ||
-          "/profile.jpg"
-        }
+        src="/profile.jpg"
         alt="My Profile"
         className="left-6 h-full w-full rounded-l-[2.5rem] rounded-tr-[2.5rem] object-cover object-right-top"
       />
