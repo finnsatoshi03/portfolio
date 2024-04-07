@@ -48,6 +48,7 @@ function Archives({ onSelect, project }) {
         isHovered={isHovered}
         reverse={true}
         techStacks={techStacks}
+        onScroller={true}
       />
 
       {!isMobile && (

@@ -11,9 +11,8 @@ function ProjectsHeader({ collaborators }) {
       {/* developers */}
       <div className="absolute -right-[170px] top-4 flex w-[150px]">
         {collaborators.slice(0, 4).map((collaborator, index) => (
-          <>
+          <div key={index}>
             <img
-              key={index}
               src={collaborator.avatar_url}
               alt={collaborator.login}
               className="absolute left-[20px] size-8 rounded-full border border-red-500"
@@ -29,7 +28,7 @@ function ProjectsHeader({ collaborators }) {
                 {collaborator.login}
               </div>
             )}
-          </>
+          </div>
         ))}
         {collaborators.length > 4 && (
           <div

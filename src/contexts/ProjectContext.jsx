@@ -30,8 +30,6 @@ function reducer(state, action) {
 
 function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(import.meta.env.VERCEL_REACT_APP_GITHUB_API_TOKEN);
-  console.log(import.meta.env.VITE_REACT_APP_GITHUB_API_TOKEN);
 
   useEffect(function () {
     async function fetchProjects() {
