@@ -14,7 +14,8 @@ export const projectImagesMapping = {
   d3xtra:
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712481049/zbmjpttd82buuje0pklw.jpg",
   portfolio: "https://placehold.co/600x400",
-  "productivity app": "https://placehold.co/600x400",
+  "productivity app":
+    "https://res.cloudinary.com/dzzngly8h/image/upload/v1712560905/ricoyetjijnd3cmgoww5.jpg",
   spotify: "https://placehold.co/600x400",
   "recipe website": "https://placehold.co/600x400",
 };
