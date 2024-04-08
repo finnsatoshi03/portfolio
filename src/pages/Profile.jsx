@@ -22,7 +22,7 @@ function Profile() {
       : latest;
   }, projects[0]);
   const projectImage =
-    projectImagesMapping[latestProject.name?.trim().toLowerCase()] ||
+    projectImagesMapping[latestProject?.name?.trim().toLowerCase()] ||
     "https://placehold.co/600x400";
   // console.log(projectImagesMapping[latestProject.name?.trim().toLowerCase()]);
 
