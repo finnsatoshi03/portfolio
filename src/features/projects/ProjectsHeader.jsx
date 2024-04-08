@@ -15,7 +15,7 @@ function ProjectsHeader({ collaborators }) {
             <img
               src={collaborator.avatar_url}
               alt={collaborator.login}
-              className="absolute left-[20px] size-8 rounded-full border border-red-500"
+              className="absolute left-[20px] size-8 rounded-full border-2 border-inherit"
               style={{ left: `${index * 20}px` }}
               onMouseEnter={() => setHoveredCollaborator(collaborator.login)}
               onMouseLeave={() => setHoveredCollaborator(null)}
