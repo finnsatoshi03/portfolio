@@ -18,7 +18,7 @@ export const projectImagesMapping = {
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712560905/ricoyetjijnd3cmgoww5.jpg",
   spotify:
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712574949/bwxp1yuxv5wyctuiwvq6.jpg",
-  "recipe website": "https://placehold.co/600x400",
+  "recipe website": "https://res.cloudinary.com/dzzngly8h/image/upload/v1712592362/pq7qhocu0cwatsklaby4.jpg",
 };
 
 export const techStacksMapping = {
