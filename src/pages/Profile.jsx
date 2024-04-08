@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import CardsSlide from "../components/CardsSlide";
 import useMobileView from "../hooks/useMobileView";
 import { useProjects } from "../contexts/ProjectContext";
+import { projectImagesMapping } from "../data/projects";
 
 const highlights = [
   { title: "Clean Code*", pos: "pos-1" },
@@ -20,6 +21,10 @@ function Profile() {
       ? project
       : latest;
   }, projects[0]);
+  const projectImage =
+    projectImagesMapping[latestProject.name?.trim().toLowerCase()] ||
+    "https://placehold.co/600x400";
+  // console.log(projectImagesMapping[latestProject.name?.trim().toLowerCase()]);
 
   // console.log(latestProject);
 
@@ -40,6 +45,7 @@ function Profile() {
         label="Recent Project"
         title={latestProject?.name}
         url={latestProject?.url}
+        image={projectImage}
         buttonText="View"
         pos="topRight"
         type="primary"

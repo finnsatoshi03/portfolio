@@ -33,7 +33,7 @@ function Card({
         className={`${type === "secondary" ? "size-[6rem] sm:size-[8rem]" : "size-[5rem]"} rounded-2xl object-cover xl:rounded-3xl`}
       />
       <div className={type === "secondary" ? "flex flex-col py-2 pr-3" : ""}>
-        <p className="text-sm">{label}</p>
+        <p className="text-sm leading-[0.5]">{label}</p>
         <h2 className="mb-1.5 text-sm font-bold leading-4 sm:text-base">
           {title}
         </h2>
