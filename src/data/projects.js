@@ -16,7 +16,8 @@ export const projectImagesMapping = {
   portfolio: "https://placehold.co/600x400",
   "productivity app":
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712560905/ricoyetjijnd3cmgoww5.jpg",
-  spotify: "https://placehold.co/600x400",
+  spotify:
+    "https://res.cloudinary.com/dzzngly8h/image/upload/v1712574949/bwxp1yuxv5wyctuiwvq6.jpg",
   "recipe website": "https://placehold.co/600x400",
 };
 
