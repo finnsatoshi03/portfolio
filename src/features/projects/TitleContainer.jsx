@@ -24,9 +24,9 @@ function TitleContainer({ title, techStacks }) {
     return [firstPart.trim(), secondPart.trim()];
   };
 
-  const projectName = isMobile ? title.split(" ")[0] : title;
+  // const projectName = isMobile ? title.split(" ")[0] : title;
 
-  const [firstPart, secondPart] = splitTitle(projectName);
+  const [firstPart, secondPart] = splitTitle(title);
 
   return (
     <>
