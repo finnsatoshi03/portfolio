@@ -24,11 +24,9 @@ function Archives({ onSelect, project }) {
     "https://placehold.co/600x400";
   const limitedText = description.split(" ").slice(0, 7).join(" ") + "...";
 
-  const projectName = isMobile ? project.name.split(" ")[0] : project.name;
-
   return (
     <div
-      className={`${transition} archives-container group relative h-[15vh] w-[30vw] hover:w-[40vw] hover:cursor-pointer xl:h-[20vh] xl:w-full xl:hover:h-[35vh] xl:hover:w-full`}
+      className={`${transition} archives-container group relative h-[15vh] w-[30vw] overflow-hidden hover:w-[40vw] hover:cursor-pointer xl:h-[20vh] xl:w-full xl:hover:h-[35vh] xl:hover:w-full`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
@@ -40,10 +38,10 @@ function Archives({ onSelect, project }) {
       />
 
       <div
-        className={`${transition} absolute left-3 ${isHovered ? "top-2" : "top-2/3 lg:top-[65%] xl:top-[70%]"}`}
+        className={`${transition} absolute left-3 w-3/4 ${isHovered ? "top-2" : "top-2/3 lg:top-[65%] xl:top-[70%]"}`}
       >
-        <h1 className="px-2 py-1 font-montserrat text-lg font-bold md:text-xl xl:text-2xl">
-          {projectName}
+        <h1 className="overflow-hidden overflow-ellipsis px-2 py-1 font-montserrat text-lg font-bold group-hover:leading-4 md:text-xl xl:text-2xl">
+          {project.name}
         </h1>
       </div>
 
