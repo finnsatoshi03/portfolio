@@ -6,6 +6,10 @@ import Title from "./Title";
 function TitleContainer({ title, techStacks }) {
   const isMobile = useMobileView();
   const splitTitle = (title) => {
+    if (isMobile) {
+      title = title.replace("Productivity", "Prod.").replace("Website", "");
+    }
+
     let firstPart = "";
     let secondPart = title;
 
