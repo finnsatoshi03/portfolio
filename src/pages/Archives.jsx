@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { PlaceholdersAndVanishInput } from "../components/ui/VanishInput";
 
 const archives = [
   {
@@ -46,6 +48,15 @@ const archives = [
   },
 ];
 
+const placeholders = [
+  "Graphic Design",
+  "Web Development",
+  "Mobile Development",
+  "System Development",
+  "School Projects",
+  // "Randoms",
+];
+
 function Archives() {
   const [selectedArchive, setSelectedArchive] = useState(null);
 
@@ -57,6 +68,14 @@ function Archives() {
     }
   };
 
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
   return (
     <motion.div
       className="scrollbar-hide relative overflow-auto pb-40"
@@ -65,37 +84,61 @@ function Archives() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2 }}
     >
-      <h1 className="archive-h1 absolute top-1/3 w-screen overflow-hidden whitespace-nowrap text-[9rem] font-bold tracking-tighter">
-        Explore My Work History Explore My Work History Explore My Work History
-      </h1>
+      <PlaceholdersAndVanishInput
+        className="mb-4 md:mb-6"
+        placeholders={placeholders}
+        onChange={handleChange}
+        onSubmit={onSubmit}
+      />
       {archives.map((archive, index) => (
         <>
           <div
             key={index}
-            className="mx-auto mb-4 flex w-3/4 justify-between opacity-40 md:gap-6"
+            className="group mx-auto mb-4 flex w-full justify-between gap-2 md:w-3/4 md:gap-6"
             onClick={(e) => {
               e.stopPropagation();
               handleClick(index);
             }}
           >
             <div className="flex items-start gap-4">
-              <h1
-                className={`font-roboto text-7xl font-black uppercase leading-[4rem] tracking-tighter transition-colors duration-700 ease-in-out ${selectedArchive === index && "text-green-700"} hover:cursor-pointer md:text-9xl md:leading-[6rem]`}
+              <motion.h1
+                className={`font-roboto text-5xl font-black uppercase leading-[2.2rem] tracking-tighter transition-colors duration-700 ease-in-out ${selectedArchive === index ? "text-[#00a69b]" : "opacity-40"} hover:cursor-pointer md:text-9xl md:leading-[6rem]`}
+                whileHover={{ x: 10 }}
+                // transition={{ type: "spring", stiffness: 500 }}
               >
                 {archive.title}
-              </h1>
-              <p className="font-serif font-black">
-                <span className="text-green-600">
+              </motion.h1>
+              <p className="font-serif font-black opacity-40">
+                <span className="text-[#00a69b]">
                   {index < 10 ? `0${index + 1}` : index + 1}
                 </span>{" "}
                 / {index.length < 10 ? `0${index.length}` : archives.length}
               </p>
             </div>
-            <p
-              className={`text-sans w-1/4 self-end leading-4 transition-all duration-700 ${selectedArchive === index ? "opacity-100" : "opacity-0"}`}
-            >
-              {archive.description}
-            </p>
+            {selectedArchive !== index && (
+              <motion.div
+                className="self-end rounded-full bg-black p-2 transition-all duration-700 ease-in-out group-hover:-rotate-45 group-hover:cursor-pointer group-hover:bg-slate-700 md:p-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                <ArrowRight
+                  // size={isMobile ? 24 : 48}
+                  className="size-[24px] md:size-[48px]"
+                  strokeWidth={1}
+                  color="white"
+                />
+              </motion.div>
+            )}
+            {selectedArchive === index && (
+              <motion.p
+                className="text-sans w-1/4 self-end leading-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                {archive.description}
+              </motion.p>
+            )}
           </div>
           <motion.img
             src={archive.image}
