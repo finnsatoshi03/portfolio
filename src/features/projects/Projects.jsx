@@ -51,7 +51,10 @@ function Projects() {
           alt="My Profile"
           className="left-6 h-full w-full rounded-[2.5rem] object-cover"
         />
-        <ProjectsHeader collaborators={collaborators} />
+        <ProjectsHeader
+          collaborators={collaborators}
+          selectedProject={selectedProject}
+        />
         <ProjectsDetail techStacks={techStacks} title={title} />
         {isMobile && (
           <LogoStack

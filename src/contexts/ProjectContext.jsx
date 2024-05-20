@@ -46,6 +46,7 @@ function ProjectProvider({ children }) {
         "ProductivityApp",
         "recipe-website",
         "spotify-html-css",
+        "rms-company",
       ];
 
       const projects = await Promise.all(

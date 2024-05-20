@@ -8,6 +8,8 @@ export const techStacksDescriptionMapping = {
   spotify: "A clone of Spotify built only with HTML, CSS, and slight JS.",
   "recipe website":
     "A website for sharing and discovering recipes built with Vite, React, and Tailwind.",
+  "rms company":
+    "A website for a tech repairshop company built with Vite, React, Tailwind, and TypeScript.",
 };
 
 export const projectImagesMapping = {
@@ -18,7 +20,9 @@ export const projectImagesMapping = {
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712560905/ricoyetjijnd3cmgoww5.jpg",
   spotify:
     "https://res.cloudinary.com/dzzngly8h/image/upload/v1712574949/bwxp1yuxv5wyctuiwvq6.jpg",
-  "recipe website": "https://res.cloudinary.com/dzzngly8h/image/upload/v1712592362/pq7qhocu0cwatsklaby4.jpg",
+  "recipe website":
+    "https://res.cloudinary.com/dzzngly8h/image/upload/v1712592362/pq7qhocu0cwatsklaby4.jpg",
+  "rms company": "https://placehold.co/600x400",
 };
 
 export const techStacksMapping = {
@@ -27,6 +31,7 @@ export const techStacksMapping = {
   "productivity app": ["Expo", "React Native"],
   spotify: ["HTML", "CSS", "JS"],
   "recipe website": ["Vite", "React", "Tailwind"],
+  "rms company": ["Vite", "React", "Tailwind", "TypeScript"],
 };
 
 export const techStacksImageMapping = {
@@ -43,4 +48,6 @@ export const techStacksImageMapping = {
   HTML: "https://cdn.iconscout.com/icon/free/png-256/free-html-5-1-1175208.png",
   CSS: "https://static-00.iconduck.com/assets.00/file-type-css-icon-1806x2048-r5fwjl3p.png",
   JS: "https://miro.medium.com/v2/resize:fit:512/1*W3ZHer9j6Cxzh78m0jLLdw.png",
+  TypeScript:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
 };

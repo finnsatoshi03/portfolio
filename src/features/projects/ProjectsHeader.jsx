@@ -1,13 +1,26 @@
 import { useState } from "react";
 
 /* eslint-disable react/prop-types */
-function ProjectsHeader({ collaborators }) {
+function ProjectsHeader({ collaborators, selectedProject }) {
   const [hoveredCollaborator, setHoveredCollaborator] = useState(null);
+  if (selectedProject?.name === "Rms Company") {
+    selectedProject.url = "https://rms-avisha.vercel.app/";
+    // console.log(selectedProject);
+  }
 
   return (
     <div className="project-logo-inverted-border-top-right absolute left-0 top-0 rounded-br-[2.5rem] bg-white px-6 py-4 text-xl text-black">
       {/* project logo */}
-      <h1 className="relative z-10">Project Logo</h1>
+      <div
+        className="relative z-10 rounded-full border border-black p-2 hover:cursor-pointer"
+        onClick={() => window.open(selectedProject?.url, "_blank")}
+      >
+        <img
+          className="size-8"
+          src={`${selectedProject?.url.includes("github") ? "https://cdn-icons-png.flaticon.com/512/25/25231.png" : "https://static-00.iconduck.com/assets.00/vercel-icon-512x449-3422jidz.png"}`}
+          alt="GitHub Icon"
+        />
+      </div>
       {/* developers */}
       <div className="absolute -right-[170px] top-4 flex w-[150px]">
         {collaborators.slice(0, 4).map((collaborator, index) => (
