@@ -24,7 +24,7 @@ function AppLayout() {
       <div className={`flex flex-col gap-4 ${isMobile && "min-w-0"}`}>
         <Sidebar />
         <main
-          className="flex-grow"
+          className={`flex-grow ${location.pathname === "/archives" && "overflow-hidden"}`}
           style={{ height: !onHome && "calc(82.5vh)" }}
         >
           <Outlet />

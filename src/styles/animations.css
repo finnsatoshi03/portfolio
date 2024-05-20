@@ -177,3 +177,15 @@ img:hover ~ .project-description-container {
     transform: translate(26px);
   }
 }
+
+.archive-h1 {
+  animation: scrollTitle 10s linear infinite;
+}
+@keyframes scrollTitle {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
